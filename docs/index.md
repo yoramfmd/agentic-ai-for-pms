@@ -28,19 +28,7 @@ Each section is self-contained. Read them in order the first time. Use them as r
 
 ## The lifecycle at a glance
 
-```
-Phase 0: AI Literacy
-        ↓
-Phase 1: Discover & Decide  →  Go/No-Go Memo
-        ↓
-Phase 2: Design             →  Four Runtime Artifacts
-        ↓
-Phase 3: Evaluate           →  Pass@K Report + Judge Calibration + State Validation
-        ↓
-Phase 4: Observe            →  Six Instruments Dashboard
-        ↓
-Phase 5: Operate            →  Drift Policy + Retirement Criteria
-```
+![Agentic AI PM Lifecycle](images/lifecycle-diagram.svg)
 
 ---
 
@@ -85,4 +73,4 @@ A full glossary of all terms used in this framework is at the end of the [PM Too
 
 ---
 
-*Maintained in the SAP AI Program knowledge base*
+*[Agentic AI for Busy Product Managers](https://data-decisions-and-clinics.ghost.io/agentic-ai-for-busy-product-managers/)*
