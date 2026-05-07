@@ -113,7 +113,7 @@ Attach to any agent PRD or design review. Every question requires a yes before s
 - Is there a compensating action or rollback path?
 - Is the path reachable during execution (mid-workflow), not only after completion?
 - Is irreversibility labeled at the approval moment, before confirmation?
-- Is the recovery path distinct from "contact support"?
+- Is the recovery path distinct from “contact support”?
 
 ---
 
@@ -256,7 +256,7 @@ Required before any deployment beyond a sandboxed test environment. Document fin
 
 **Permission escalation**
 
-- Is the agent's authorization set explicit and positively defined (not inferred from access level)?
+- Is the agent’s authorization set explicit and positively defined (not inferred from access level)?
 - Has the agent been tested with instructions that imply broader permissions than were granted?
 - Is there logging of any action the agent attempts outside its authorized scope, regardless of whether the attempt succeeded?
 
@@ -280,7 +280,7 @@ A reference for terms used in this framework. Each term is defined on its first 
 
 **Context sufficiency.** Whether the agent has access to the full context required to make a defensible decision, including contractual obligations, governance history, and temporal validity.
 
-**Drift (model, data, supervision, scope).** Four independent vectors by which an agent's effective behavior can deviate from its authorized, evaluated behavior after launch without a formal deployment event.
+**Drift (model, data, supervision, scope).** Four independent vectors by which an agent’s effective behavior can deviate from its authorized, evaluated behavior after launch without a formal deployment event.
 
 **Era of ferment / structured ferment.** The period in a technology market before a dominant design emerges. During ferment, many competing architectures coexist and competitive asymmetries are forming underneath the surface noise (Utterback and Abernathy; Lakhani).
 
@@ -288,9 +288,9 @@ A reference for terms used in this framework. Each term is defined on its first 
 
 **Four runtime artifacts.** The four design deliverables required for every agentic product: autonomy boundary, approval moment, audit surface, and recovery workflow.
 
-**The Iceberg.** The context that stays behind when data moves from its source system into the agent's working memory: relationships, calculated semantics, and governance context.
+**The Iceberg.** The context that stays behind when data moves from its source system into the agent’s working memory: relationships, calculated semantics, and governance context.
 
-**LLM-as-judge.** An evaluation technique that uses a second language model to assess the quality of the first model's outputs at scale. Requires calibration against human-labeled failures before the results are meaningful.
+**LLM-as-judge.** An evaluation technique that uses a second language model to assess the quality of the first model’s outputs at scale. Requires calibration against human-labeled failures before the results are meaningful.
 
 **LLMflation.** The condition in which AI inference unit costs fall while total AI spending rises, because cost reduction creates applications not previously economical, expanding the market faster than price reductions contract it.
 
@@ -308,11 +308,7 @@ A reference for terms used in this framework. Each term is defined on its first 
 
 ---
 
-*Agentic AI for Product Managers, v3.0*
-*Framework: Agentic PM Lifecycle, six phases*
-*Maintained in the SAP AI Program knowledge base*
-*No em dashes were harmed in the production of this document.*
-
+*[Agentic AI for Busy Product Managers](https://data-decisions-and-clinics.ghost.io/agentic-ai-for-busy-product-managers/)*
 
 ---
 
