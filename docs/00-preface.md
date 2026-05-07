@@ -1,6 +1,6 @@
 # Preface: Why This Framework Exists Now
 
-← [Back to index](README.md) | Next: [Phase 0 — AI Literacy](01-ai-literacy.md) →
+← [Back to index](index.md) | Next: [Phase 0 — AI Literacy](01-ai-literacy.md) →
 
 ---
 
@@ -73,4 +73,4 @@ The phases are sequential in the lifecycle but not in practice. Design decisions
 
 ---
 
-← [Back to index](README.md) | Next: [Phase 0 — AI Literacy](01-ai-literacy.md) →
+← [Back to index](index.md) | Next: [Phase 0 — AI Literacy](01-ai-literacy.md) →

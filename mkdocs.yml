@@ -24,12 +24,10 @@ theme:
     code: JetBrains Mono
   features:
     - navigation.sections
-    - navigation.path
     - navigation.top
     - navigation.footer
     - search.highlight
     - search.suggest
-    - search.share
     - content.tooltips
     - content.code.copy
   icon:
@@ -70,9 +68,6 @@ plugins:
 
 extra:
   social:
-    - icon: fontawesome/brands/ghost
-      link: https://data-decisions-and-clinics.ghost.io/agentic-ai-for-busy-product-managers/
-      name: Ghost blog
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/yoramfriedman/
       name: LinkedIn
