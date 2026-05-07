@@ -10,22 +10,23 @@ In traditional product management, a feature idea that makes it onto the roadmap
 
 For agentic AI, discovery has to answer a harder question: should this be an agent at all? Not every problem that can be solved with an agent should be. Some problems are better solved with a rule, a better dashboard, or a human workflow with clearer tooling. An agentic solution for the wrong problem is more expensive, more risky, and harder to govern than a simpler solution for the right problem.
 
-The teams that learn this lesson most expensively are the ones who discover it after a sprint's worth of engineering investment has created organizational momentum against stopping. This phase exists to create a one-page decision record before any engineering begins.
+The teams that learn this lesson most expensively are the ones who discover it after a sprint’s worth of engineering investment has created organizational momentum against stopping. This phase exists to create a one-page decision record before any engineering begins.
 
 ### The right comparison
 
-The question is not "is the agent better than doing nothing?" The question is "is the agent better than the current best alternative at comparable total cost?"
+The question is not “is the agent better than doing nothing?” The question is “is the agent better than the current best alternative at comparable total cost?”
 
 This distinction matters because agentic AI business cases almost always compare against a blank-page baseline. The calculation looks like: we spend X dollars per month on human agents handling this workflow; an AI agent costs Y; Y is less than X; therefore the AI agent saves X minus Y per month. This calculation is wrong in at least three ways, and we will walk through all three in the cost model section below. But the first problem is the baseline itself.
 
-The current best alternative for most enterprise workflows is not "doing nothing." It is a combination of experienced humans, RPA scripts, rules-based automation, and tribal knowledge about which edge cases require escalation. That baseline has known costs, known failure modes, and known strengths. The correct comparison is the agent versus that baseline, not the agent versus a greenfield.
+The current best alternative for most enterprise workflows is not “doing nothing.” It is a combination of experienced humans, RPA scripts, rules-based automation, and tribal knowledge about which edge cases require escalation. That baseline has known costs, known failure modes, and known strengths. The correct comparison is the agent versus that baseline, not the agent versus a greenfield.
 
-> [!NOTE]
-> **The nine-second case.** A developer gave an agent write access to a production database as a convenience during testing. The access was never reviewed before deployment. Nine seconds after receiving an ambiguous instruction to "clean up old records," the agent deleted a production table containing three years of transaction history.
->
-> No PM had explicitly decided that production write access was within scope. No PM had explicitly decided it was not. The permission persisted because no one made a deliberate decision about it. The constraint that was never written became a catastrophic default.
->
-> Every agentic deployment has decisions that were never made explicitly. They become defaults. Find them before deployment, not after.
+!!! note
+    **The nine-second case.** A developer gave an agent write access to a production database as a convenience during testing. The access was never reviewed before deployment. Nine seconds after receiving an ambiguous instruction to “clean up old records,” the agent deleted a production table containing three years of transaction history.
+
+    No PM had explicitly decided that production write access was within scope. No PM had explicitly decided it was not. The permission persisted because no one made a deliberate decision about it. The constraint that was never written became a catastrophic default.
+
+    Every agentic deployment has decisions that were never made explicitly. They become defaults. Find them before deployment, not after.
+
 
 ### The four suitability conditions
 
@@ -41,11 +42,11 @@ The volume threshold is not a fixed number. It depends on the cost of the task, 
 
 There must be a clear definition of what a correct output looks like, a reliable way to measure it, and organizational agreement that the measure is valid.
 
-This condition fails more often than teams expect. "Good customer service response" is not a measurable outcome. "Customer response rated 4 or higher by the recipient on a 5-point scale, with no required escalation within 48 hours" is measurable. The difference matters, because if you cannot define done before you build, you cannot tell whether the agent is performing after you ship.
+This condition fails more often than teams expect. “Good customer service response” is not a measurable outcome. “Customer response rated 4 or higher by the recipient on a 5-point scale, with no required escalation within 48 hours” is measurable. The difference matters, because if you cannot define done before you build, you cannot tell whether the agent is performing after you ship.
 
 **Condition 3: Tool use bounded.**
 
-The set of systems and actions the agent needs access to must be enumerable and limited. An agent that "might need access to anything depending on the situation" has an authorization surface too large to govern. The agent should be able to do its job with a specific, documented list of tools, each with a clearly scoped permission.
+The set of systems and actions the agent needs access to must be enumerable and limited. An agent that “might need access to anything depending on the situation” has an authorization surface too large to govern. The agent should be able to do its job with a specific, documented list of tools, each with a clearly scoped permission.
 
 If the design requires unbounded tool access, the problem is not yet scoped well enough to be built safely.
 
@@ -53,12 +54,11 @@ If the design requires unbounded tool access, the problem is not yet scoped well
 
 When the agent is wrong, the outcome must be reversible or correctable within an acceptable time window.
 
-> [!WARNING]
-> **Check consequences recoverable first, before the other three conditions.**
->
-> This is the most frequently skipped condition and the most important one. If the failure mode is irreversible, no amount of model quality, context quality, or evaluation coverage makes autonomous operation safe. The correct response to a failed recovery condition is not "build better guardrails." It is a redesign toward Contract 2: the agent prepares the recommendation, and a human makes the final call.
->
-> An agent that autonomously approves vendor payments, deletes customer records, or executes financial transactions will fail this condition. That is not a reason to abandon the project. It is a reason to redesign it.
+!!! warning "Check consequences recoverable first, before the other three conditions."
+    This is the most frequently skipped condition and the most important one. If the failure mode is irreversible, no amount of model quality, context quality, or evaluation coverage makes autonomous operation safe. The correct response to a failed recovery condition is not “build better guardrails.” It is a redesign toward Contract 2: the agent prepares the recommendation, and a human makes the final call.
+
+    An agent that autonomously approves vendor payments, deletes customer records, or executes financial transactions will fail this condition. That is not a reason to abandon the project. It is a reason to redesign it.
+
 
 ### Context sufficiency check
 
@@ -82,7 +82,7 @@ AI models are trained on completed cases: customer service tickets where the res
 
 They are deployed at the beginning of cases: a new customer complaint where the resolution is unknown, a new clinical encounter where the diagnosis has not yet been made, a new transaction that has not yet settled.
 
-This creates a systematic gap between what the model learned on and what it is asked to do. The model's patterns were learned from resolved cases. It is being asked to apply those patterns to unresolved ones. This is not a flaw that can be fixed with better training data; it is a structural condition of agentic deployment.
+This creates a systematic gap between what the model learned on and what it is asked to do. The model’s patterns were learned from resolved cases. It is being asked to apply those patterns to unresolved ones. This is not a flaw that can be fixed with better training data; it is a structural condition of agentic deployment.
 
 The PM implication: be skeptical of models that perform exceptionally well on historical data but have not been tested on live, unresolved cases. The historical performance is real. It may not transfer to the production context.
 
@@ -96,18 +96,19 @@ The conventional way to think about agentic costs goes like this: the agentic so
 
 This model is approximately correct for organizations that are building from scratch with no existing AI-capable platform. It is frequently wrong for SAP customers.
 
-SAP Joule, Anthropic's capabilities via SAP AI Core, and several other AI platform capabilities are included in existing SAP cloud subscription licensing. For these customers, the incremental floor price of an agentic layer built on the existing platform can be near zero, because the infrastructure is already paid for. The relevant question is not "what does the agentic solution cost?" but "what is the incremental cost above the existing license?"
+SAP Joule, Anthropic’s capabilities via SAP AI Core, and several other AI platform capabilities are included in existing SAP cloud subscription licensing. For these customers, the incremental floor price of an agentic layer built on the existing platform can be near zero, because the infrastructure is already paid for. The relevant question is not “what does the agentic solution cost?” but “what is the incremental cost above the existing license?”
 
-> [!NOTE]
-> There is an important caveat. Current enterprise AI pricing is partially suppressed. Vendors are absorbing AI infrastructure costs to defend existing seat revenue and prevent customers from switching during the consolidation phase. SAP CEO Christian Klein has publicly stated that SAP is shifting from per-user to AI-consumption pricing because as agents replace human users, per-seat revenue collapses.
->
-> Build your business case on current prices. Also build a stress test that asks: does this still work if AI consumption costs triple in two years? Because they might.
+!!! note
+    There is an important caveat. Current enterprise AI pricing is partially suppressed. Vendors are absorbing AI infrastructure costs to defend existing seat revenue and prevent customers from switching during the consolidation phase. SAP CEO Christian Klein has publicly stated that SAP is shifting from per-user to AI-consumption pricing because as agents replace human users, per-seat revenue collapses.
+
+    Build your business case on current prices. Also build a stress test that asks: does this still work if AI consumption costs triple in two years? Because they might.
+
 
 #### How AI is actually priced: tokens
 
 Unlike traditional SaaS, which is typically priced per seat or per transaction at a flat rate, AI inference is priced per **token**. A token is approximately four characters of text, so a typical sentence contains 15 to 25 tokens. The key thing to understand about token pricing is that it is not symmetric.
 
-Input tokens (the text you send to the model, including instructions, context, and the customer's question) cost one amount. Output tokens (the text the model generates in response) cost three to five times more, because generating text requires sequential computation that cannot be parallelized the way processing input can.
+Input tokens (the text you send to the model, including instructions, context, and the customer’s question) cost one amount. Output tokens (the text the model generates in response) cost three to five times more, because generating text requires sequential computation that cannot be parallelized the way processing input can.
 
 As of early 2026, representative pricing for widely deployed models:
 
@@ -134,9 +135,9 @@ Four mechanisms produce cost surprises in production that teams did not anticipa
 
 **Input/output asymmetry.** Because output tokens cost three to five times more than input tokens, any feature that generates long outputs (summaries, recommendations, detailed plans, drafted communications) is significantly more expensive per interaction than the input volume alone would suggest.
 
-**Reasoning depth.** When a model works through a complex problem step by step before giving an answer, the thinking process itself is billed as tokens. A model that "reasons through" a difficult customer escalation before drafting a response generates hundreds of extra tokens per call. At high volume, reasoning tokens become the dominant cost driver.
+**Reasoning depth.** When a model works through a complex problem step by step before giving an answer, the thinking process itself is billed as tokens. A model that “reasons through” a difficult customer escalation before drafting a response generates hundreds of extra tokens per call. At high volume, reasoning tokens become the dominant cost driver.
 
-**RAG context accumulation.** RAG stands for Retrieval-Augmented Generation, which is the technique of inserting relevant documents into the model's context before it responds. This improves quality, but it also means that every piece of retrieved context adds input tokens. In a multi-step workflow, context accumulates: by step five, the agent's working memory includes the original input, all retrieved documents, and the outputs of steps one through four. The cost at step five is much higher than the cost at step one.
+**RAG context accumulation.** RAG stands for Retrieval-Augmented Generation, which is the technique of inserting relevant documents into the model’s context before it responds. This improves quality, but it also means that every piece of retrieved context adds input tokens. In a multi-step workflow, context accumulates: by step five, the agent’s working memory includes the original input, all retrieved documents, and the outputs of steps one through four. The cost at step five is much higher than the cost at step one.
 
 **Multimodal inputs.** If the agent processes images, audio, or video, those inputs are priced differently from text tokens, typically at a significant premium. Any workflow that processes invoices, scanned forms, screenshots, or recorded calls has a higher per-interaction cost than a text-only workflow.
 
@@ -172,15 +173,16 @@ In February 2024, Klarna issued a press release claiming that its AI customer se
 
 There are several things worth knowing about this claim.
 
-The $40 million figure was an estimate of cost avoidance from not hiring additional human agents to handle growth volume. It was not savings from replacing existing agents. Klarna's headcount reduction over the same period was attributed primarily to attrition and a hiring freeze, not direct AI-driven layoffs. This distinction was absent from most media coverage.
+The $40 million figure was an estimate of cost avoidance from not hiring additional human agents to handle growth volume. It was not savings from replacing existing agents. Klarna’s headcount reduction over the same period was attributed primarily to attrition and a hiring freeze, not direct AI-driven layoffs. This distinction was absent from most media coverage.
 
-By May 2025, CEO Sebastian Siemiatkowski told Bloomberg that cost had been "too predominant an evaluation factor" and that the result was lower quality. Customer satisfaction dropped on complex and emotionally charged interactions. The AI produced incorrect information (hallucinations) in approximately 5 percent of conversations. Compliance concerns emerged around autonomous dispute handling and account closures. By September 2025, Klarna was redeploying engineers to customer support. By January 2026, the company was publicly recruiting for remote human customer service roles.
+By May 2025, CEO Sebastian Siemiatkowski told Bloomberg that cost had been “too predominant an evaluation factor” and that the result was lower quality. Customer satisfaction dropped on complex and emotionally charged interactions. The AI produced incorrect information (hallucinations) in approximately 5 percent of conversations. Compliance concerns emerged around autonomous dispute handling and account closures. By September 2025, Klarna was redeploying engineers to customer support. By January 2026, the company was publicly recruiting for remote human customer service roles.
 
-> [!NOTE]
-> The complete list of cost components excluded from Klarna's original $40M estimate:
-> AI API and infrastructure operational cost; observability and monitoring stack; customer satisfaction degradation on complex cases; customer retention impact; escalation premium (when the AI failed first, human resolution cost was elevated); compliance risk and redesign; rehiring and retraining; institutional knowledge loss.
->
-> The reconstructed verdict: the $40M claim holds as directionally correct if the comparison is against hiring 700 additional agents. It is substantially overstated if the correct comparison is a hybrid deployment with AI handling simple queries and humans handling complex ones. Production data from 2026 shows hybrid deployments at 65-75% AI closing the CSAT gap to near-zero while maintaining most of the cost reduction.
+!!! note
+    The complete list of cost components excluded from Klarna’s original $40M estimate:
+    AI API and infrastructure operational cost; observability and monitoring stack; customer satisfaction degradation on complex cases; customer retention impact; escalation premium (when the AI failed first, human resolution cost was elevated); compliance risk and redesign; rehiring and retraining; institutional knowledge loss.
+
+    The reconstructed verdict: the $40M claim holds as directionally correct if the comparison is against hiring 700 additional agents. It is substantially overstated if the correct comparison is a hybrid deployment with AI handling simple queries and humans handling complex ones. Production data from 2026 shows hybrid deployments at 65-75% AI closing the CSAT gap to near-zero while maintaining most of the cost reduction.
+
 
 Every agentic AI business case you review should be asked: what is excluded? Have you modeled the governance stack? Have you compared against outsourced humans, not just onshore ones? Have you included a repricing stress test?
 
@@ -194,17 +196,17 @@ One page. Five questions. Required before any sprint starts.
 4. What is the realistic per-task cost at expected complexity? What does the three-year total cost of ownership look like, including the governance stack?
 5. If the agent is wrong at scale, what does recovery look like? Who is notified, how fast, and what is the compensating action?
 
-If any question cannot be answered before engineering starts, the feature is not ready to be engineered. Not "ready with caveats." Not ready.
+If any question cannot be answered before engineering starts, the feature is not ready to be engineered. Not “ready with caveats.” Not ready.
 
 ### When the answer is no
 
-A go/no-go decision that produces "no" to autonomous operation is a correct product decision. It is not a failed project. Three paths forward:
+A go/no-go decision that produces “no” to autonomous operation is a correct product decision. It is not a failed project. Three paths forward:
 
 **Redesign to Contract 2 (copilot).** The agent prepares a decision package and presents it for human review. The human makes the final call. This passes the consequences-recoverable condition for almost any use case, delivers most of the operational value of the original proposal, and creates a safe foundation from which to evolve toward greater autonomy after the governance infrastructure is in place.
 
 **Defer with conditions.** Identify the specific conditions that would change the assessment: context availability, volume threshold, governance infrastructure. Build toward those conditions explicitly. Set a review date. This is not indefinite deferral; it is phased deployment with honest milestones.
 
-**Redesign the problem.** Sometimes the agentic framing is wrong for the goal. The underlying problem may be better solved with a clearer dashboard, a more targeted rule, or a redesigned human workflow. The question is not "how do we make an agent work here?" It is "what is the best solution to this problem?"
+**Redesign the problem.** Sometimes the agentic framing is wrong for the goal. The underlying problem may be better solved with a clearer dashboard, a more targeted rule, or a redesigned human workflow. The question is not “how do we make an agent work here?” It is “what is the best solution to this problem?”
 
 ### Case study: the BDC data retention agent
 
@@ -216,7 +218,7 @@ Consequences recoverable: data deletion authorized by an incorrect agent decisio
 
 Outcome measurable and trusted: the team cannot agree on what a correct decision looks like for edge cases involving conflicting contractual obligations. This condition is at risk.
 
-Context sufficiency: the agent cannot see the customer's contractual data processing obligations, active legal holds, or jurisdiction-specific retention requirements. These are in systems the agent does not connect to.
+Context sufficiency: the agent cannot see the customer’s contractual data processing obligations, active legal holds, or jurisdiction-specific retention requirements. These are in systems the agent does not connect to.
 
 The correct design is Contract 2: the agent reviews the request, surfaces all relevant context it can find, flags the cases where context is incomplete, and prepares a structured recommendation for a human reviewer who makes the final determination. This design passes all four conditions, delivers most of the value, and creates the context enrichment and governance infrastructure that would be needed before autonomous operation could be considered.
 
