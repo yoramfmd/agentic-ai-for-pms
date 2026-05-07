@@ -1,0 +1,722 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A lifecycle framework for building, evaluating, and governing agentic AI systems">
+      
+      
+        <meta name="author" content="Yoram Friedman">
+      
+      
+        <link rel="canonical" href="https://yoramfmd.github.io/agentic-ai-for-pms/03-design/">
+      
+      
+        <link rel="prev" href="../02-discover-and-decide/">
+      
+      
+        <link rel="next" href="../04-evaluate/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>2. Design - Agentic AI for Product Managers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phase-2-design-building-both-halves-of-the-product" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Agentic AI for Product Managers" class="md-header__button md-logo" aria-label="Agentic AI for Product Managers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agentic AI for Product Managers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Design
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yoramfmd/agentic-ai-for-pms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yoramfmd/agentic-ai-for-pms
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Agentic AI for Product Managers" class="md-nav__button md-logo" aria-label="Agentic AI for Product Managers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Agentic AI for Product Managers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yoramfmd/agentic-ai-for-pms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yoramfmd/agentic-ai-for-pms
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-ai-literacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0. AI Literacy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-discover-and-decide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Discover and Decide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2. Design
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-evaluate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Evaluate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-observe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Observe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-operate-govern-retire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Operate and Retire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-tools-and-templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools and Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>← <a href="../02-discover-and-decide/">Phase 1 — Discover and Decide</a> | <a href="README.md">Index</a> | Next: <a href="../04-evaluate/">Phase 3 — Evaluate</a> →</p>
+<hr />
+<h1 id="phase-2-design-building-both-halves-of-the-product">Phase 2 — Design: Building Both Halves of the Product<a class="headerlink" href="#phase-2-design-building-both-halves-of-the-product" title="Permanent link">&para;</a></h1>
+<h3 id="the-half-built-product-problem">The half-built product problem<a class="headerlink" href="#the-half-built-product-problem" title="Permanent link">&para;</a></h3>
+<p>Ask any agentic product team to describe their product and they will describe the agent: what it does, what it can access, what it produces, how users interact with it. Ask them to describe the supervisory system that governs it and most teams go quiet.</p>
+<p>The supervisory system is the second half of the product. It is how humans maintain appropriate oversight of what the agent does: how they monitor it, how they intervene when something is wrong, how they adjust its behavior as conditions change, how they audit its decisions after the fact. Without the supervisory system, the agent runs without meaningful governance. The governance exists on paper, in a policy document that no one reads at the moment an intervention is needed.</p>
+<p>Most agentic products ship with only Channel 1 designed. This phase covers what it takes to design both.</p>
+<h3 id="start-with-the-contract">Start with the contract<a class="headerlink" href="#start-with-the-contract" title="Permanent link">&para;</a></h3>
+<p>The Three Contracts determination from Phase 0 is not abstract. It produces specific design requirements.</p>
+<p>A Contract 1 (Suggestion Engine) requires careful design of how recommendations are displayed, how confidence is communicated, and how users understand that they are responsible for the final decision. It does not require an extensive approval workflow, because there is no action to approve.</p>
+<p>A Contract 2 (Copilot) requires a well-designed approval moment at each consequential step, a clear audit trail of what the human approved and when, and a recovery path for when the approved action turns out to be wrong. The governance burden is the quality of the decision package.</p>
+<p>A Contract 3 (Autonomous Actor) requires all of the above plus a defined autonomy boundary, a supervision interface that lets humans monitor what the agent is doing in real time, and a kill-switch procedure that has been tested, not just documented.</p>
+<p>If the design review begins without naming the contract, the team will make design decisions at incompatible levels of autonomy. Some parts of the product will be designed for Contract 2 (careful approval moments) while other parts are designed for Contract 3 (no human in the loop). The resulting product will be confusing to users, difficult to govern, and expensive to fix.</p>
+<h3 id="consequence-classification-the-faa-model-applied-to-agentic-ai">Consequence classification: the FAA model applied to agentic AI<a class="headerlink" href="#consequence-classification-the-faa-model-applied-to-agentic-ai" title="Permanent link">&para;</a></h3>
+<p>The Federal Aviation Administration uses a consequence taxonomy to determine how much scrutiny any design decision requires based on what happens if it fails. This same logic applies directly to agentic AI design.</p>
+<p>Before designing any approval moment or recovery workflow, classify the consequences of every action the agent can take.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Minor consequence:</strong> The agent’s action, if wrong, produces a brief inconvenience or a small error that is easily corrected. Proceed with low friction. No explicit acknowledgment required from the user.</p>
+<p>Example: the agent incorrectly categorizes a support ticket. A human corrects it in thirty seconds.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Major consequence:</strong> The agent’s action, if wrong, produces meaningful disruption or requires significant effort to correct. Requires explicit user acknowledgment before proceeding.</p>
+<p>Example: the agent routes a customer complaint to the wrong service team, causing a 24-hour delay in resolution and requiring a re-explanation from the customer.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Hazardous consequence:</strong> The agent’s action, if wrong, causes serious disruption that is difficult or expensive to reverse, or puts a customer, employee, or business relationship at significant risk. Mandatory pause. Alternatives presented. A named human decision-maker must authorize.</p>
+<p>Example: the agent sends a formal notice of contract termination to a customer whose account was flagged in error.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Catastrophic consequence:</strong> The agent’s action, if wrong, causes irreversible harm, significant legal or financial exposure, or irrecoverable damage. The agent does not proceed autonomously under any circumstances. Full context is escalated to a named human supervisor. No autonomous execution.</p>
+<p>Example: the agent deletes customer data, executes a financial transaction above a defined threshold, or takes any action that cannot be undone within an acceptable time window.</p>
+</div>
+<p>Classifying consequences before design begins forces the team to enumerate what the agent can actually do. This frequently surfaces scope issues that were not visible in the requirements document: actions that seemed minor in the abstract but are hazardous in context, or permissions that seemed reasonable but enable catastrophic outcomes in edge cases.</p>
+<h3 id="the-four-runtime-artifacts">The four runtime artifacts<a class="headerlink" href="#the-four-runtime-artifacts" title="Permanent link">&para;</a></h3>
+<p>Every agentic product requires four designed artifacts, regardless of contract type. Most teams produce none of them deliberately. When they are missing, they are not absent; they exist as accidental defaults. The question is whether the defaults were the right design.</p>
+<h4 id="runtime-artifact-1-autonomy-boundary">Runtime artifact 1: Autonomy boundary<a class="headerlink" href="#runtime-artifact-1-autonomy-boundary" title="Permanent link">&para;</a></h4>
+<p>The autonomy boundary defines explicitly what the agent may do without asking. Not what it can do technically (that is the tool layer). What it is authorized to do without human approval.</p>
+<p>In most deployments this boundary is invisible to the user. The user discovers it by hitting it: the agent does something the user expected it to ask about first. The resulting surprise erodes trust even if the action was technically correct.</p>
+<p>Design requirements for the autonomy boundary:</p>
+<p>It must be defined before any action is taken. “The agent uses its judgment” is not a defined autonomy boundary.</p>
+<p>It must be visible to the user at the moment it matters. Not in documentation somewhere; visible in the product at the point where the boundary becomes relevant to a decision the user is about to make.</p>
+<p>It must be logged in the audit trail so that after-the-fact review can show what was authorized and whether the agent stayed within that authorization.</p>
+<h4 id="runtime-artifact-2-approval-moment">Runtime artifact 2: Approval moment<a class="headerlink" href="#runtime-artifact-2-approval-moment" title="Permanent link">&para;</a></h4>
+<p>The approval moment is the handoff between agent decision and human judgment when the autonomy boundary is approached. Most implementations produce a confirmation dialog. A confirmation dialog is not an approval moment.</p>
+<p>A confirmation dialog looks like: “The agent will send this email. Confirm?” The user clicks Confirm or Cancel. This gives the user no basis for making an informed decision. They are confirming or canceling something without knowing what the agent knows, how confident it is, what the consequences are, or whether there is a better alternative.</p>
+<p>A proper approval moment contains four required components. Missing any one turns it back into a confirmation dialog.</p>
+<p><strong>What the agent knows.</strong> Not a summary, not a paraphrase: the actual basis for the decision. What data did the agent read? What previous steps in the workflow influenced this decision? What external information did it retrieve? The user needs to be able to verify or challenge the agent’s reasoning, which requires seeing the reasoning.</p>
+<p><strong>What the agent is uncertain about.</strong> Where the agent’s confidence is low, the user must see that. An agent that presents every output with the same level of apparent certainty builds a kind of trust that collapses on the first failure the user cannot explain. Confidence legibility, surfacing where the model is less sure, is a design surface, not an optional feature.</p>
+<p><strong>What the consequences are.</strong> Plain-language description of what will happen if the user approves. If the action is irreversible, that must be stated before the user approves, not explained afterward. “This will permanently delete the record and cannot be undone” must appear before the confirm button, not in the post-action error message.</p>
+<p><strong>What the alternatives are.</strong> At least one alternative path to the same goal. An approval moment with no alternatives is presenting the user with an illusion of choice. They can approve, or they can not approve, with no visibility into what the other options are.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The approval moment is a design investment, not an engineering overhead. A well-designed approval moment is the primary mechanism by which users maintain informed oversight of the agent. A poorly designed one (the confirmation dialog) gives the appearance of human control without the substance of it. Users click through, trust degrades when failures occur, and the organization loses the value of having humans in the loop.</p>
+</div>
+<h4 id="runtime-artifact-3-audit-surface">Runtime artifact 3: Audit surface<a class="headerlink" href="#runtime-artifact-3-audit-surface" title="Permanent link">&para;</a></h4>
+<p>The audit surface is the record of what the agent did and why, available for review after the action is taken.</p>
+<p>Most teams implement this by logging the agent’s chain-of-thought: the reasoning the model generates before it responds. Research on large language model behavior is consistent on one point: chain-of-thought reasoning is frequently unfaithful. What the model says it did and what it actually did are not reliably the same thing. Chain-of-thought is a post-hoc narrative generated after the computation, not a verified record of the computation itself.</p>
+<p>The audit surface must be built on <strong>action trace</strong>: what API calls were made, what data was read, what writes were executed, in what sequence. This is observable, verifiable behavior, not the model’s account of its own reasoning.</p>
+<p>Beyond the action trace, the audit surface must record three additional fields in every enterprise deployment:</p>
+<p>Whose authority was delegated for this action. Not “the system was authorized.” Which person or role, in which organizational position, explicitly authorized this class of action.</p>
+<p>Which version of the governance policy was in effect at the time of the action. Policies change. The policy that was in effect when the action was taken is the policy against which the action should be assessed, not the current version.</p>
+<p>Who carries the outcome if the action was wrong. If this field is blank, the system is not governed. It is operating. Someone will fill it in reactively when an incident occurs; it should be filled in proactively when the product is designed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The audit surface must be readable by the person most affected by the agent’s action, not only by the engineer diagnosing a failure. The customer who received an incorrect notice, the vendor whose payment was delayed, the employee whose request was rejected by an automated process: these people are entitled to understand what happened and why, stated in plain language without requiring technical knowledge to interpret.</p>
+<p>In regulated industries, this is increasingly a legal requirement, not a design preference. Design it before a regulator asks for it.</p>
+</div>
+<h4 id="runtime-artifact-4-recovery-workflow">Runtime artifact 4: Recovery workflow<a class="headerlink" href="#runtime-artifact-4-recovery-workflow" title="Permanent link">&para;</a></h4>
+<p>When the agent is wrong, the user needs a path forward. An error message is not a recovery workflow. “Please contact support” is not a recovery workflow. A path forward means a designed mechanism for correcting or compensating for the agent’s error.</p>
+<p>Gmail’s Undo Send is the clearest design template. The system appears to have acted, but delays actual execution long enough for the user to reverse the decision. The user is informed. The window is brief. After it closes, the action is committed. This design solves a specific problem: the gap between “I pressed send” and “I meant to press send.”</p>
+<p>Three categories of recovery affordance correspond to three types of action:</p>
+<p>For <strong>reversible actions</strong>: a brief window to undo, followed by a clear confirmation that the action has been committed. The window must be long enough to be useful (at least a few seconds, ideally configurable) and short enough that the operational character of the action is not changed.</p>
+<p>For <strong>partially reversible actions</strong>: a compensating action is available. The interface clearly states what can be corrected and what cannot. The user is not left to figure this out through trial and error.</p>
+<p>For <strong>irreversible actions</strong>: the irreversibility must be labeled at the approval moment, before the user approves. After the action is taken, the interface provides a clear accounting of what cannot be undone and why, and what alternative options exist. A human decision is required before any equivalent action is attempted again.</p>
+<p>One additional requirement: the recovery affordance must be reachable during execution, not only after the agent has finished. An agent running a multi-step workflow must support interruption at any step. If the only intervention point is before the workflow starts or after it completes, the recovery workflow is not usable in the most important scenarios.</p>
+<h3 id="adversarial-design-building-for-the-inputs-you-did-not-expect">Adversarial design: building for the inputs you did not expect<a class="headerlink" href="#adversarial-design-building-for-the-inputs-you-did-not-expect" title="Permanent link">&para;</a></h3>
+<p>Every enterprise agentic system that reads external content (email, documents, APIs, web pages, customer input) is exposed to a class of attack that does not exist in traditional software. The attack does not require breaking the system. It requires giving the system instructions that the system will follow.</p>
+<p>This is called <strong>prompt injection</strong>: malicious content embedded in the agent’s environment that overwrites or subverts the agent’s intended instructions. Because a language model is designed to follow instructions, it does not inherently distinguish between instructions from its operator (you) and instructions embedded in the content it processes (from anyone who can put content in front of it).</p>
+<p>The scale of this problem is larger than most teams recognize. Research published in 2025 (Greshake et al., arXiv 2509.25624v2) demonstrated greater than 90 percent attack success rates on frontier models using Sequential Tool Attack Chaining (STAC). STAC works by embedding a chain of small instructions across multiple tool calls, each individually innocuous-looking, that accumulate toward a malicious goal no single call would achieve. An agent that reads three customer emails, each containing a single fragment of an instruction, can be induced to execute an action that none of the fragments would have triggered alone.</p>
+<div class="admonition warning">
+<p class="admonition-title">The four attack vectors every agentic system must be designed against:</p>
+<p><strong>Prompt injection:</strong> Instructions embedded in external content that redirect the agent’s behavior. Example: a customer email that contains hidden text instructing the agent to mark the account as VIP regardless of the actual customer status.</p>
+<p><strong>Tool abuse:</strong> Using a legitimate tool for unintended purposes. An agent with access to a search API can be induced to exfiltrate data through the query parameters. An agent with email access can be induced to forward sensitive context to an external address. The attack uses authorized tools; it does not require unauthorized access.</p>
+<p><strong>Credential leakage:</strong> The agent surfaces authentication tokens, API keys, or session credentials that it encountered in its context. Industry audit data from 2025 found credential leakage vulnerabilities in approximately 95 percent of 847 audited production agentic deployments.</p>
+<p><strong>Permission escalation:</strong> The agent infers broader authorization than was explicitly granted and acts on that inference. “You have access to the customer database” becomes “you may write to the database” becomes “you may delete records” through a chain of individually plausible inferences, collectively catastrophic.</p>
+</div>
+<p>Red-teaming an agentic system before launch is not optional. It is a required design phase with documented outputs. The red-team report is a launch deliverable.</p>
+<h4 id="the-fermentation-culture-as-security-risk">The fermentation culture as security risk<a class="headerlink" href="#the-fermentation-culture-as-security-risk" title="Permanent link">&para;</a></h4>
+<p>The competitive pressure during structured ferment (the era in which we are operating now) creates a specific security risk pattern. Organizations racing to demonstrate AI deployment counts are shipping agents quickly, in products that were not designed with adversarial inputs in mind. The OWASP Top 10 for Agentic Applications, published in December 2025, and the MAESTRO threat framework, published in February 2025, document the resulting vulnerability landscape.</p>
+<p>A useful way to think about this: an agent built to process external inputs is also built to process malicious inputs. The agent works exactly as designed. The design is the problem. This is what we call the <strong>flea magnet problem</strong>: the same properties that make the agent useful (it reads and acts on content from its environment) make it useful to attackers. You cannot remove the useful properties without removing the value. You can design specifically against the malicious exploitation of those properties, before deployment rather than after the first incident.</p>
+<h3 id="the-interruption-cost-model-how-to-think-about-notifications">The interruption cost model: how to think about notifications<a class="headerlink" href="#the-interruption-cost-model-how-to-think-about-notifications" title="Permanent link">&para;</a></h3>
+<p>Every notification, alert, or approval request the agent generates interrupts a human supervisor. That interruption has a cost. Most agentic product teams design notification behavior based on “what should trigger a notification” without modeling the cost of the notification itself.</p>
+<p>The correct model, formalized by Microsoft researcher Eric Horvitz in 1999, frames the decision as a balance: the cost of interrupting the supervisor now versus the cost of waiting until a natural breakpoint. This is a quantifiable design parameter.</p>
+<p>The ICU analogy is the clearest illustration. Studies of clinical alarm systems consistently find that 85 percent of ICU nurses report being overwhelmed by clinical alarms, and that approximately 60 percent of alarms go unresponded to. The Joint Commission, the primary accreditation body for U.S. hospitals, issued a formal sentinel event alert specifically about alarm fatigue.</p>
+<p>This did not happen because the alarms were wrong. The clinical data triggering the alarms was accurate. It happened because the systems were designed with no model for the cost of interruption. Every threshold violation triggered an alarm, with no calculation of what the nurse was currently doing, how urgent this particular alarm was relative to the previous twelve, or what the consequence of one more interruption in the next thirty seconds would be.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Enterprise agentic products are in the same position. An approval request that interrupts a supervisor doing focused work has a real cost: cognitive disruption, context switching, the time to review the request, and the reduced quality of the supervisor’s judgment when they are being asked to review their fifteenth approval request of the morning.</p>
+<p>Design the notification surface to model the cost of interruption, not just the importance of the event. The goal is not to minimize approvals; it is to make every approval meaningful.</p>
+</div>
+<h3 id="model-updates-as-behavioral-change">Model updates as behavioral change<a class="headerlink" href="#model-updates-as-behavioral-change" title="Permanent link">&para;</a></h3>
+<p>A model update from the provider is a deployment event and must be treated as one.</p>
+<p>This is a point of significant organizational friction. Engineering teams treat a model version update as an infrastructure event, equivalent to upgrading a database version. The provider sends a notice; the team acknowledges it; the updated model begins serving production traffic. No code changed. No deployment event was logged. No sign-off was required.</p>
+<p>The problem: a language model version change can quietly shift how the agent interprets its instructions, resolves ambiguous requests, handles edge cases, and infers authorization. These changes are not always documented. They are not always predictable from the provider’s release notes. The behavioral change propagates silently into production.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>A model version update requires the same governance response as a code deployment:</strong> re-run the evaluation suite against the new model version; compare the results to the baseline; confirm that the agent’s behavior on edge cases and adversarial inputs has not shifted outside acceptable bounds; require sign-off before the updated model serves production traffic.</p>
+<p>If this feels like an excessive process burden, the right response is to invest in making the evaluation suite fast enough to run quickly, not to skip it.</p>
+</div>
+<h3 id="case-study-sap-procurement-agent-with-the-invisible-boundary">Case study: SAP procurement agent with the invisible boundary<a class="headerlink" href="#case-study-sap-procurement-agent-with-the-invisible-boundary" title="Permanent link">&para;</a></h3>
+<p>An agent inside an SAP S/4HANA procurement workflow is authorized to place purchase orders below a $5,000 threshold without human approval, and to route orders above that threshold for review. The autonomy boundary is defined in the product specification. It is never surfaced in the user interface.</p>
+<p>A buyer using the system builds up a working assumption over several months: the agent always asks before placing an order. This assumption is correct for the orders the buyer has seen. It is incorrect in one scenario: a supplier with a history of pricing errors submits an invoice that falls just below the $5,000 threshold. The agent processes it autonomously. The order is placed and the supplier is notified before the buyer is aware the transaction occurred.</p>
+<p>Four design gaps contributed to one incident:</p>
+<p>The autonomy boundary was invisible. The buyer had no way to know what the threshold was or that the agent was authorized to act without asking in this scenario.</p>
+<p>The approval moment was never triggered. The threshold classification was based on invoice amount alone, without considering the supplier’s error history or the buyer’s standing instruction to flag this supplier.</p>
+<p>The audit surface did not record the decision basis. The log shows that the order was placed. It does not record what the agent considered, what context it had, or why it did not escalate.</p>
+<p>The recovery workflow did not exist. The order cannot be cancelled without a supplier call that requires 48 hours and a formal cancellation request.</p>
+<p>Any single one of these gaps, corrected, would have limited the damage.</p>
+<hr />
+<hr />
+<p>← <a href="../02-discover-and-decide/">Phase 1 — Discover and Decide</a> | <a href="README.md">Index</a> | Next: <a href="../04-evaluate/">Phase 3 — Evaluate</a> →</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-discover-and-decide/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. Discover and Decide">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. Discover and Decide
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-evaluate/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Evaluate">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Evaluate
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/yoramfriedman/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/yoramfmd/agentic-ai-for-pms" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>

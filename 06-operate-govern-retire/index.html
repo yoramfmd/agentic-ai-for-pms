@@ -1,0 +1,685 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A lifecycle framework for building, evaluating, and governing agentic AI systems">
+      
+      
+        <meta name="author" content="Yoram Friedman">
+      
+      
+        <link rel="canonical" href="https://yoramfmd.github.io/agentic-ai-for-pms/06-operate-govern-retire/">
+      
+      
+        <link rel="prev" href="../05-observe/">
+      
+      
+        <link rel="next" href="../07-tools-and-templates/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>5. Operate and Retire - Agentic AI for Product Managers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phase-5-operate-govern-and-retire" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Agentic AI for Product Managers" class="md-header__button md-logo" aria-label="Agentic AI for Product Managers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agentic AI for Product Managers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Operate and Retire
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yoramfmd/agentic-ai-for-pms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yoramfmd/agentic-ai-for-pms
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Agentic AI for Product Managers" class="md-nav__button md-logo" aria-label="Agentic AI for Product Managers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Agentic AI for Product Managers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yoramfmd/agentic-ai-for-pms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yoramfmd/agentic-ai-for-pms
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-ai-literacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0. AI Literacy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-discover-and-decide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Discover and Decide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-evaluate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Evaluate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-observe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Observe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Operate and Retire
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-tools-and-templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools and Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>← <a href="../05-observe/">Phase 4 — Observe</a> | <a href="README.md">Index</a> | Next: <a href="../07-tools-and-templates/">PM Tools and Templates</a> →</p>
+<hr />
+<h1 id="phase-5-operate-govern-and-retire">Phase 5 — Operate, Govern, and Retire<a class="headerlink" href="#phase-5-operate-govern-and-retire" title="Permanent link">&para;</a></h1>
+<h3 id="the-transition-from-watching-to-governing">The transition from watching to governing<a class="headerlink" href="#the-transition-from-watching-to-governing" title="Permanent link">&para;</a></h3>
+<p>Phase 4 gives you instruments. Phase 5 defines what you do with the readings.</p>
+<p>Observation without governance is a dashboard nobody acts on. The instruments from Phase 4 produce signals. This phase defines the thresholds at which those signals require a response, what the response is, and who is responsible for executing it.</p>
+<p>Most organizations that reach this phase have a gap: the signals exist but the governance structure to act on them does not. There is no defined threshold at which a degrading pass rate requires the team to pause the agent. There is no defined process for reviewing a model update before it affects production traffic. There is no retirement criteria that would tell anyone when the agent should be decommissioned.</p>
+<p>This is the most organizational-maturity-intensive phase of the framework. It requires the PM to build structures that involve engineering, legal, compliance, and operations, structures that need to be agreed upon before the first incident, not designed reactively in response to one.</p>
+<h3 id="the-four-drift-vectors">The four drift vectors<a class="headerlink" href="#the-four-drift-vectors" title="Permanent link">&para;</a></h3>
+<p>Drift is not one thing. An agent can drift in four independent directions simultaneously, and the combination can be more dangerous than any single vector in isolation.</p>
+<div class="admonition note">
+<p class="admonition-title">Check all four at every scheduled post-release review.</p>
+</div>
+<p><strong>Model drift.</strong> Has the foundation model version changed since the last behavioral baseline was established? The provider does not reliably notify the product team when this happens. The only reliable way to detect model drift is to run a behavioral comparison against the baseline after each scheduled review period.</p>
+<p><strong>Data drift.</strong> Has the input distribution shifted significantly from the distribution the agent was evaluated on? Schema migrations, new customer segments, seasonal patterns, and upstream system changes can move the actual inputs the agent receives away from the inputs it was tested on. A model that performed well on last year’s customer service vocabulary may perform less well on this year’s vocabulary if product terminology has changed.</p>
+<p><strong>Supervision drift.</strong> Has the frequency or quality of human review changed since launch? The monthly review meeting that was quietly canceled because “things have been running smoothly” is supervision drift. It does not announce itself. It is discovered when an incident requires a review that has not happened in four months.</p>
+<p><strong>Scope drift.</strong> Is the agent taking actions outside its originally authorized mandate? This is often invisible until someone asks why the agent is doing something it was never designed to do. It can be introduced by a prompt change that removed an exclusion list, a tool configuration change that added new permissions, or an orchestration change that expanded the agent’s decision-making authority.</p>
+<h3 id="tiered-checkpoint-protocol">Tiered checkpoint protocol<a class="headerlink" href="#tiered-checkpoint-protocol" title="Permanent link">&para;</a></h3>
+<p>Define the governance response thresholds before the first incident. Three tiers with specific triggers, written into the go/no-go memo before launch.</p>
+<p><strong>Review.</strong> One drift vector above its defined threshold. No operational pause required. Scheduled review within the defined window. Document findings. Update the behavioral baseline if the model has changed. Confirm that the governance posture remains appropriate for the current operating conditions.</p>
+<p><strong>Pause.</strong> Two or more drift vectors above threshold simultaneously. Or: supervision drift (the review cadence has lapsed) with no replacement oversight defined. Pause new invocations. Review before resuming. When resuming, do not restore the agent to its prior autonomy level without a documented basis for that specific decision.</p>
+<p><strong>Retire.</strong> Scope drift outside the authorized mandate has been confirmed. Incident recovery time is not improving across three consecutive incidents. One or more of the four suitability conditions from Phase 1 no longer holds. Retirement is a product decision made through a defined process, not an emergency shutdown in response to a crisis.</p>
+<div class="admonition important">
+<p class="admonition-title">The agent that has no defined retirement criteria is an agent nobody authorized to run indefinitely.</p>
+<p>This is not a hypothetical risk. It is the default outcome of every agentic deployment that treats Phase 5 as out of scope for the initial launch. The agent runs. Conditions change. Nobody has a defined trigger that says “this agent should stop.” It keeps running.</p>
+</div>
+<h3 id="constitutional-runtime-rules">Constitutional runtime rules<a class="headerlink" href="#constitutional-runtime-rules" title="Permanent link">&para;</a></h3>
+<p>A governance policy document does not constrain the agent at runtime. It constrains the humans who are supposed to govern the agent. This is an important distinction.</p>
+<p>Constitutional rules are different. They are constraints enforced at the moment of each agent action, before the action is taken, regardless of what the agent was instructed to do and regardless of what context it received.</p>
+<p>Four categories of constitutional rules must be defined for every agentic deployment before engineering starts:</p>
+<p><strong>Actions the agent may never take.</strong> Hard stops. Regardless of instruction, context, or user request. If an action is in this category, the agent refuses it and escalates to a human. This list should be short and unambiguous. If it is long, the authorization model is not scoped correctly.</p>
+<p><strong>Actions requiring explicit human authorization.</strong> Regardless of confidence level. The agent does not proceed without a named human decision. The agent presents the decision package; the authorization is logged before the action is taken.</p>
+<p><strong>Actions the agent may take autonomously.</strong> The positively-defined scope of autonomous action, with the specific conditions under which that authorization can be suspended or revoked.</p>
+<p><strong>The kill-switch procedure.</strong> Who can pause the agent, by what mechanism, how fast it takes effect, and what happens to in-flight work when the agent is paused. This procedure must be tested before launch. A kill-switch that exists only in documentation is not a kill-switch.</p>
+<h3 id="adaptive-governance-matching-constraint-to-consequence">Adaptive governance: matching constraint to consequence<a class="headerlink" href="#adaptive-governance-matching-constraint-to-consequence" title="Permanent link">&para;</a></h3>
+<p>A flat governance policy applies the same review requirement to a low-stakes output and a high-stakes financial transaction. This approach, in which every action requires the same level of review regardless of what it does, has a predictable outcome: supervisors learn to treat high-consequence approvals with the same level of attention they give low-consequence ones. All approvals become rubber stamps.</p>
+<p>Adaptive governance ties the constraint level to the consequence classification established in Phase 2.</p>
+<p>Minor-consequence actions: proceed with logging; human review on a sampling basis only.</p>
+<p>Major and hazardous-consequence actions: human authorization required before the action is taken; confidence threshold applied; alternatives presented at the approval moment.</p>
+<p>Catastrophic-consequence actions: the agent does not proceed autonomously. Full context is escalated to a named human supervisor. The human decision is logged with the supervisor’s name and the policy version in effect.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adaptive governance is not risk aversion. It is calibration. The agent gets less friction on low-stakes decisions and appropriate friction on high-stakes ones. This is how you keep supervision meaningful over time: by ensuring that the approvals that require careful human judgment actually receive it, rather than being lost in a stream of approvals that should never have required human review.</p>
+</div>
+<h3 id="the-authority-delegation-chain">The authority delegation chain<a class="headerlink" href="#the-authority-delegation-chain" title="Permanent link">&para;</a></h3>
+<p>For every consequential action the agent takes, three questions must be answerable from the audit trail, not from memory, not from a policy document, not by calling the person who was responsible at the time. From the audit trail.</p>
+<p><strong>Whose authority was the agent acting under?</strong> Not “the system was authorized.” Which person or role, in which organizational position, explicitly authorized this class of action? The chain from the agent’s action back to a named human principal must be traceable.</p>
+<p><strong>Which version of the governance policy was in effect at the time of the action?</strong> Policies change. The version in effect when the action was taken is the policy against which the action should be assessed. If the policy has been revised since the action was taken, both the original version and the current version must be available for comparison.</p>
+<p><strong>Who carries the outcome if the action was wrong?</strong> If this question has no answer, the system is not governed. It is operating. The answer must be established before the agent is deployed, not assigned reactively when an incident occurs.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If any of the three questions cannot be answered from the audit trail, the system is not supervised. It is merely operating.</p>
+<p>“The agent did it” is not a defensible answer to any of these three questions in any regulated context, and in an increasing number of non-regulated ones.</p>
+</div>
+<h3 id="the-affected-person-audit-view">The affected-person audit view<a class="headerlink" href="#the-affected-person-audit-view" title="Permanent link">&para;</a></h3>
+<p>Most audit trails are designed for engineers diagnosing a failure. They contain system logs, API call records, error codes, and timing data. They tell the engineer what happened technically. They are not readable by anyone without engineering background, and they are not designed to answer the question the affected person is asking.</p>
+<p>The affected person, the customer whose request was denied, the vendor whose payment was delayed, the employee whose application was rejected, is asking a different question: why did this happen, was it correct, and what can I do about it?</p>
+<p>Most enterprise agentic systems cannot answer this question. The affected person has no designed path to understanding the agent’s decision.</p>
+<p>Build the affected-person audit view before a regulator requires it. It requires the same action trace as the engineering audit but presented differently: a plain-language description of what the agent decided, the basis for that decision, the authority under which it acted, and the options available to the affected person if they believe the decision was wrong.</p>
+<p>In an increasing number of regulated environments, this is becoming a legal requirement. In healthcare, GDPR, and various state-level privacy laws, the right to a meaningful explanation of automated decisions is moving from a design preference to a compliance obligation.</p>
+<h3 id="retirement-as-a-designed-lifecycle-stage">Retirement as a designed lifecycle stage<a class="headerlink" href="#retirement-as-a-designed-lifecycle-stage" title="Permanent link">&para;</a></h3>
+<p>Retirement is the phase that almost no team plans for and everyone eventually needs. It is typically triggered by a crisis: the agent produces a serious error, someone escalates, and the response is to shut it down as quickly as possible while minimizing damage.</p>
+<p>Crisis-driven retirement produces data loss, user confusion, audit gaps, and no institutional learning. The team that improvised a retirement once will improvise the next one too.</p>
+<p>Designed retirement has four steps, executed in sequence, with named owners assigned before launch.</p>
+<p><strong>Step 1: Preserve the audit trail.</strong> Before any systems are decommissioned, archive the complete action trace with the retention policy applied. This step cannot be deferred to “after we figure out what to do.” Once the agent stops running and infrastructure is decommissioned, the audit record may be permanently unrecoverable.</p>
+<p><strong>Step 2: Block new invocations.</strong> From the moment the retirement decision is made, the agent accepts no new tasks. In-flight tasks are either completed under heightened human review or handed to a human workflow. Do not allow new work to enter an agent that is being retired.</p>
+<p><strong>Step 3: Notify affected users.</strong> Plain-language explanation of the retirement reason, the date the agent will stop operating, and what the replacement workflow is. Users who have adapted their work around the agent need enough lead time to readapt.</p>
+<p><strong>Step 4: Document the decision.</strong> The reason for retirement, who authorized it, which policy version was in effect, and what specific conditions would need to change before a replacement is considered. This document is the institutional memory that prevents the same design from being reproposed in six months without the context of why the previous version was retired.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The drift and retirement policy must be written before the agent ships and attached to the go/no-go memo. It is not a document for later. An agent that ships without retirement criteria defined is an agent nobody has authorized to run indefinitely, but that is exactly what it will do.</p>
+</div>
+<h3 id="case-study-a-sap-financial-postings-agent-all-four-vectors-nine-months">Case study A: SAP financial postings agent — all four vectors, nine months<a class="headerlink" href="#case-study-a-sap-financial-postings-agent-all-four-vectors-nine-months" title="Permanent link">&para;</a></h3>
+<p>An SAP agent flags anomalies in financial postings. It passes all launch criteria. Over nine months, all four drift vectors go active simultaneously without any single event triggering a review.</p>
+<p>Model drift: the foundation model is updated twice by the provider. The team receives the vendor’s release notes, which note no behavioral changes. No behavioral baseline comparison is run.</p>
+<p>Data drift: the customer migrates to a new chart of accounts. Input patterns shift significantly. The agent’s false positive rate increases. The operations team attributes it to migration noise and does not investigate further.</p>
+<p>Supervision drift: the weekly review of the agent’s flagging decisions is canceled by the operations manager because “things have been quiet.” No replacement threshold or interim process is defined.</p>
+<p>Scope drift: an exclusion list that prevented the agent from flagging intercompany transfers is silently removed from the prompt during an unrelated prompt update. The agent begins flagging transfers that are correct and authorized.</p>
+<p>Nine months after launch, a financial controller asks why intercompany transfers are appearing in the exception queue. The investigation reveals all four drift vectors were active. No drift thresholds were defined at launch. No retirement criteria were written.</p>
+<h3 id="case-study-b-practice-fusion-the-governance-failure-was-not-the-prompt">Case study B: Practice Fusion — the governance failure was not the prompt<a class="headerlink" href="#case-study-b-practice-fusion-the-governance-failure-was-not-the-prompt" title="Permanent link">&para;</a></h3>
+<p>In 2019, the electronic health record vendor Practice Fusion paid $145 million to settle federal allegations that it had embedded opioid prescribing suggestions in clinical workflows without disclosure, paid for by an opioid manufacturer.</p>
+<p>The prompt worked exactly as designed. The governance failure was not the prompt itself. It was the complete absence of an authority delegation chain.</p>
+<p>Nobody had documented whose authority the clinical decision support prompt was acting under. There was no policy document that governed which organizations could influence the content of suggestions shown to physicians. There was no version control on what was in the suggestion logic at any point. Patients who received opioid prescriptions influenced by the prompt had no mechanism to learn that the suggestion had appeared, or that it had been funded by a manufacturer.</p>
+<p>Three fields in the authority delegation chain were all blank: whose authority, which policy version, who carries the outcome.</p>
+<p>This is not primarily a healthcare story. It is a governance architecture story. Any enterprise agentic deployment where the agent surfaces recommendations, suggestions, or content without a traceable chain from the recommendation to a named authorizer under a versioned policy is vulnerable to the same governance gap, regardless of industry.</p>
+<hr />
+<hr />
+<p>← <a href="../05-observe/">Phase 4 — Observe</a> | <a href="README.md">Index</a> | Next: <a href="../07-tools-and-templates/">PM Tools and Templates</a> →</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../05-observe/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Observe">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Observe
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../07-tools-and-templates/" class="md-footer__link md-footer__link--next" aria-label="Next: Tools and Templates">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Tools and Templates
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/yoramfriedman/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/yoramfmd/agentic-ai-for-pms" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>

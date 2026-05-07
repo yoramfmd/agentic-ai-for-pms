@@ -1,0 +1,44 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Inter, system-ui, sans-serif">
+  <title>The Scissors Dynamic: Silent Degradation</title>
+  <desc>Over time after deployment, model accuracy falls while user trust rises, creating a widening gap — the scissors dynamic. The danger zone is where trust exceeds actual performance.</desc>
+
+  <rect width="720" height="360" fill="#f8f9fa" rx="8"/>
+
+  <text x="360" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#1a1a2e">The Scissors Dynamic</text>
+  <text x="360" y="50" text-anchor="middle" font-size="11" fill="#6c757d">Silent degradation: accuracy falls while trust rises</text>
+
+  <rect x="70" y="65" width="580" height="220" fill="#ffffff" stroke="#dee2e6" stroke-width="1" rx="4"/>
+
+  <line x1="70" y1="120" x2="650" y2="120" stroke="#f1f3f5" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="70" y1="175" x2="650" y2="175" stroke="#f1f3f5" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="70" y1="230" x2="650" y2="230" stroke="#f1f3f5" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <text x="70" y="302" text-anchor="middle" font-size="10" fill="#868e96">Deploy</text>
+  <text x="215" y="302" text-anchor="middle" font-size="10" fill="#868e96">Month 3</text>
+  <text x="360" y="302" text-anchor="middle" font-size="10" fill="#868e96">Month 6</text>
+  <text x="505" y="302" text-anchor="middle" font-size="10" fill="#868e96">Month 9</text>
+  <text x="650" y="302" text-anchor="middle" font-size="10" fill="#868e96">Month 12</text>
+  <text x="360" y="320" text-anchor="middle" font-size="10" fill="#6c757d">Time since deployment</text>
+
+  <text x="58" y="69" text-anchor="end" font-size="10" fill="#868e96">High</text>
+  <text x="58" y="284" text-anchor="end" font-size="10" fill="#868e96">Low</text>
+
+  <path d="M70,175 C180,170 290,165 360,160 C430,155 505,148 650,138 L650,175 C505,185 430,195 360,200 C290,205 180,200 70,175 Z" fill="#fff0f0" opacity="0.6"/>
+
+  <path d="M70,200 C150,195 220,188 300,180 C380,172 460,162 560,148 C600,142 630,138 650,136" fill="none" stroke="#3b5bdb" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M70,155 C150,158 220,163 300,170 C380,178 460,188 560,200 C600,205 630,208 650,210" fill="none" stroke="#e03131" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <line x1="70" y1="65" x2="70" y2="285" stroke="#adb5bd" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <circle cx="200" cy="178" r="5" fill="#f59f00" stroke="#fff" stroke-width="1.5"/>
+  <text x="210" y="168" font-size="10" fill="#e67700" font-weight="600">Crossing point</text>
+
+  <text x="655" y="133" font-size="11" font-weight="600" fill="#3b5bdb">Trust</text>
+  <text x="655" y="213" font-size="11" font-weight="600" fill="#e03131">Accuracy</text>
+
+  <text x="460" y="168" text-anchor="middle" font-size="10" fill="#c92a2a" font-weight="600">Danger zone</text>
+  <text x="460" y="182" text-anchor="middle" font-size="10" fill="#c92a2a">Trust exceeds performance</text>
+
+  <rect x="70" y="325" width="580" height="24" rx="4" fill="#fff5f5" stroke="#ffc9c9" stroke-width="1"/>
+  <text x="360" y="341" text-anchor="middle" font-size="10" fill="#c92a2a">The system does not announce that it has degraded. Users find out through consequential errors.</text>
+</svg>

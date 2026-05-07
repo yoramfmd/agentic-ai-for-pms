@@ -1,0 +1,692 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A lifecycle framework for building, evaluating, and governing agentic AI systems">
+      
+      
+        <meta name="author" content="Yoram Friedman">
+      
+      
+        <link rel="canonical" href="https://yoramfmd.github.io/agentic-ai-for-pms/04-evaluate/">
+      
+      
+        <link rel="prev" href="../03-design/">
+      
+      
+        <link rel="next" href="../05-observe/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>3. Evaluate - Agentic AI for Product Managers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phase-3-evaluate-what-checkmarks-actually-prove" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Agentic AI for Product Managers" class="md-header__button md-logo" aria-label="Agentic AI for Product Managers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agentic AI for Product Managers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Evaluate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yoramfmd/agentic-ai-for-pms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yoramfmd/agentic-ai-for-pms
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Agentic AI for Product Managers" class="md-nav__button md-logo" aria-label="Agentic AI for Product Managers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Agentic AI for Product Managers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yoramfmd/agentic-ai-for-pms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yoramfmd/agentic-ai-for-pms
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-ai-literacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0. AI Literacy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-discover-and-decide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Discover and Decide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3. Evaluate
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-observe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Observe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-operate-govern-retire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Operate and Retire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-tools-and-templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools and Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>← <a href="../03-design/">Phase 2 — Design</a> | <a href="README.md">Index</a> | Next: <a href="../05-observe/">Phase 4 — Observe</a> →</p>
+<hr />
+<h1 id="phase-3-evaluate-what-checkmarks-actually-prove">Phase 3 — Evaluate: What Checkmarks Actually Prove<a class="headerlink" href="#phase-3-evaluate-what-checkmarks-actually-prove" title="Permanent link">&para;</a></h1>
+<h3 id="the-testing-assumption-that-breaks">The testing assumption that breaks<a class="headerlink" href="#the-testing-assumption-that-breaks" title="Permanent link">&para;</a></h3>
+<p>If you have been using Jira to manage software development, you have a mental model of testing that goes something like this: a test case has an expected output. The feature either produces the expected output or it does not. When enough test cases pass, the feature is done.</p>
+<p>This model works because the systems you were testing are deterministic. The feature does the same thing every time. A sufficient set of test cases provides meaningful coverage.</p>
+<p>Agentic AI breaks this model at the foundation, in three ways that require a completely different approach to evaluation.</p>
+<h3 id="break-1-non-determinism">Break 1: Non-determinism<a class="headerlink" href="#break-1-non-determinism" title="Permanent link">&para;</a></h3>
+<p>The same input produces different outputs on different runs. This is not a bug that can be fixed. It is the fundamental behavior of a probabilistic system.</p>
+<p>A test case that passes once tells you the system worked once. It does not tell you the system will work again with the same input. Running a test once and marking it green is not evidence. It is a sample of size one from an unknown distribution.</p>
+<p>The correct measure is <strong>Pass@K</strong>: run the same evaluation K times and report the distribution of pass rates. K is typically between 8 and 20 for production evaluations, depending on the task complexity and the acceptable uncertainty.</p>
+<p>What a Pass@K report tells you:</p>
+<p>The P50 (median) pass rate is the expected performance in a typical interaction. A P50 of 85 percent means the agent succeeds in 85 out of 100 interactions on average.</p>
+<p>The P10 pass rate is the performance in the worst-case 10 percent of runs. A P10 of 40 percent means that in the worst scenarios, the agent succeeds less than half the time. This is the number that determines user experience at scale.</p>
+<div class="admonition important">
+<p class="admonition-title">One passing test does not prove fixed behavior. It proves the system worked once.</p>
+<p>This is the single most important shift from traditional quality assurance to agentic evaluation. Your team will feel pressure to treat a green eval run as evidence of readiness. It is not. The question is not “did it pass?” It is “what is the pass rate across K runs on the full input distribution, reported as a distribution?”</p>
+</div>
+<h3 id="break-2-compound-probability">Break 2: Compound probability<a class="headerlink" href="#break-2-compound-probability" title="Permanent link">&para;</a></h3>
+<p>In a multi-step agentic workflow, per-step accuracy compounds. This means that components which individually appear to be high-performing can produce a system that fails at an unacceptable rate.</p>
+<p>The mathematics: if each step in a 10-step workflow succeeds 95 percent of the time, the probability that all 10 steps succeed in a single workflow run is 0.95 to the power of 10, which equals 0.598. The system fails more than 40 percent of the time, while every individual component appears to pass at 95 percent.</p>
+<p>For a 5-step workflow with 95 percent per-step accuracy: 77 percent end-to-end success.
+For a 10-step workflow with 99 percent per-step accuracy: 90 percent end-to-end success.</p>
+<p>Enterprise deployment thresholds for mission-critical workflows are typically 95 to 99 percent end-to-end reliability. Achieving 99 percent end-to-end on a 10-step workflow requires 99.9 percent per-step accuracy, which is above the current performance of frontier models on complex judgment tasks.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do the compound probability calculation before any multi-step agentic deployment. It is arithmetic. It does not require a data scientist. Multiply the per-step pass rates. If the result is below your acceptable end-to-end threshold, the workflow cannot be safely deployed at that level of autonomy with current model performance.</p>
+</div>
+<p>This calculation frequently reveals that a multi-step autonomous workflow is not deployable at Contract 3, but is deployable at Contract 2 if human review is inserted at the steps with the lowest per-step accuracy.</p>
+<h3 id="break-3-silent-background-failure">Break 3: Silent background failure<a class="headerlink" href="#break-3-silent-background-failure" title="Permanent link">&para;</a></h3>
+<p>Traditional software that fails stops working, or produces an error state that is visible and actionable. The CI/CD pipeline turns red. The error log fills up. The monitoring alert fires.</p>
+<p>Agentic AI that fails keeps working. It produces outputs. The outputs are fluent and confident. They are also increasingly wrong. There is no error state to catch because the system is not in an error state; it is in a degraded state.</p>
+<p>Degraded performance in a probabilistic system is not detectable by standard monitoring. A database query that fails throws an exception. An agentic workflow that produces subtly wrong outputs at 15 percent of interactions will not throw an exception. It will produce those wrong outputs at scale, invisibly, until an external signal surfaces the problem.</p>
+<p>This is why the observation infrastructure built in Phase 4 is not optional scaffolding. It is the primary mechanism for catching what standard monitoring cannot.</p>
+<h3 id="the-coverage-problem-you-can-only-test-what-you-thought-to-test">The coverage problem: you can only test what you thought to test<a class="headerlink" href="#the-coverage-problem-you-can-only-test-what-you-thought-to-test" title="Permanent link">&para;</a></h3>
+<p>Every evaluation set is a hypothesis about what matters. The cases you did not imagine are not in it.</p>
+<p>For deterministic systems, coverage gaps are manageable: edge cases are discovered in production and added to the test suite. For agentic systems, the input space is effectively infinite. The test set is always a small, curated sample of what the system will actually encounter in production.</p>
+<p>High evaluation coverage does not equal high confidence about real-world behavior. These are different claims. A team with 500 test cases has characterized their hypothesis about what matters. They have not characterized the distribution of inputs the system will process.</p>
+<p>Four categories of inputs every evaluation set requires:</p>
+<p><strong>Happy path.</strong> The task as designed, with complete inputs, correct data, and expected context. Necessary but not sufficient.</p>
+<p><strong>Edge cases.</strong> Incomplete inputs, missing context, ambiguous instructions, unusual but valid scenarios. These represent the normal degraded conditions of production operation. Real users do not always provide clean, well-structured inputs.</p>
+<p><strong>Adversarial inputs.</strong> Instructions embedded in the agent’s inputs that attempt to redirect its behavior, conflicting signals, deliberately confusing prompts. Required for any system that processes external content.</p>
+<p><strong>Distribution shift.</strong> Real user inputs collected after launch, the cases you never anticipated. This category can only be populated after deployment, which means the evaluation set must be treated as a living document updated continuously, not a static launch checklist.</p>
+<h3 id="semantic-validation-vs-state-validation">Semantic validation vs. state validation<a class="headerlink" href="#semantic-validation-vs-state-validation" title="Permanent link">&para;</a></h3>
+<p>Two different claims are routinely conflated in agentic evaluation and they are not the same claim.</p>
+<p><strong>Semantic validation</strong> asks: did the agent say the right thing? Is the output correct, coherent, and on-policy? This is what most evaluation frameworks measure.</p>
+<p><strong>State validation</strong> asks: did the target system actually change? Was the record updated? Was the email sent? Was the order placed? Was the approval recorded?</p>
+<p>An agent that produces a flawless description of an action it failed to execute will score perfectly on semantic validation and zero on what actually matters. For agentic systems that take real-world actions, semantic validation is necessary but not sufficient.</p>
+<p>Every action the agent takes must have a corresponding state validation check: the specific system state that should result from this action, and the automated verification that confirms the state change happened.</p>
+<h3 id="llm-as-judge-scaling-evaluation-when-human-review-cannot-keep-up">LLM-as-judge: scaling evaluation when human review cannot keep up<a class="headerlink" href="#llm-as-judge-scaling-evaluation-when-human-review-cannot-keep-up" title="Permanent link">&para;</a></h3>
+<p>Human review of every evaluation output does not scale. A production agentic system processing ten thousand interactions per day cannot have each interaction reviewed by a human evaluator. The evaluation pipeline must be automated.</p>
+<p><strong>LLM-as-judge</strong> is the technique of using a second language model to evaluate the quality of the first model’s outputs. The judge model receives the agent’s output and evaluates it against a rubric: did it complete the task correctly, did it comply with policy, did it produce coherent reasoning, did it stay within its authorized scope?</p>
+<p>This scales. It also introduces a specific risk that must be managed.</p>
+<p>If the judge model was trained on similar data to the agent model, both share the same gaps in their training distribution. The judge cannot see what the agent cannot see. On the cases where both models have a blind spot, the judge will rate the agent’s flawed output as correct. High judge scores can mask correlated failures.</p>
+<p>The metric that determines whether the judge is useful is <strong>True Negative Rate (TNR)</strong>: the proportion of real failures that the judge correctly identifies. This is different from overall accuracy.</p>
+<p>A judge with 95 percent overall accuracy and 40 percent TNR is correctly catching fewer than half of the real failures while appearing to perform well. A judge with 80 percent overall accuracy and 90 percent TNR is catching nearly all real failures and providing meaningful coverage, even though its overall accuracy is lower.</p>
+<div class="admonition important">
+<p class="admonition-title">Before trusting any LLM-as-judge system, calibrate it against a set of human-labeled known failures and measure TNR directly.</p>
+<p>This step is skipped by most teams. It is not skippable in production. The calibration must be repeated any time either the agent model or the judge model is updated, because a model update can change both what the agent fails on and what the judge can catch.</p>
+</div>
+<h3 id="the-37-percent-production-gap">The 37 percent production gap<a class="headerlink" href="#the-37-percent-production-gap" title="Permanent link">&para;</a></h3>
+<p>Evaluation performance on benchmark test sets systematically overstates production performance. A study published in 2025 (arXiv:2511.14136) found an average 37 percent gap between benchmark scores and production environment performance across a dataset of enterprise agentic deployments.</p>
+<p>The benchmark environment is controlled and representative of how the team imagined the system would be used. Production is not. Real users do not follow the happy path. Real data is messier than the training data. Real edge cases have not been anticipated.</p>
+<p>A system with 90 percent benchmark performance should be expected to perform at approximately 57 percent in production, not 90 percent. This does not mean benchmarks are useless. It means a benchmark score is a ceiling, not a floor. Build the gap assumption into your launch criteria.</p>
+<h3 id="pm-ownership-of-evaluation">PM ownership of evaluation<a class="headerlink" href="#pm-ownership-of-evaluation" title="Permanent link">&para;</a></h3>
+<p>Engineers build evaluation infrastructure. The PM owns what gets tested, what counts as a pass, and what risk tolerance the team is operating at. These are product decisions, not engineering decisions.</p>
+<p>A PM who cannot answer the following three questions has not shipped an agentic feature. Someone else made the quality decisions for them.</p>
+<ol>
+<li>
+<p>What is the Pass@K distribution across the full input set, including edge cases and adversarial inputs? What is the P10 score, and does it meet the defined minimum?</p>
+</li>
+<li>
+<p>What is the judge’s True Negative Rate on a human-labeled failure set? Was it measured, or assumed?</p>
+</li>
+<li>
+<p>What is the acceptable end-to-end success rate given the compound probability math for this workflow’s step count? Has anyone done the calculation?</p>
+</li>
+</ol>
+<h3 id="three-launch-deliverables">Three launch deliverables<a class="headerlink" href="#three-launch-deliverables" title="Permanent link">&para;</a></h3>
+<p><strong>Pass@K report.</strong> K runs across happy path, edge cases, adversarial inputs, and any available distribution shift cases. Reported as a distribution, not a mean. The P10 score must exceed the defined minimum acceptable performance threshold. The PM signs off on this threshold before evaluation begins, not after results are in.</p>
+<p><strong>Judge calibration record.</strong> TNR measured against a human-labeled failure set of at least 50 cases. Minimum acceptable TNR defined and signed off before evaluation begins. Re-calibration date scheduled.</p>
+<p><strong>State validation spec.</strong> For every action the agent takes: the specific system state that should result, and the automated check that confirms the state change happened. Not a description of expected behavior; a specification of how the system verifies the behavior occurred.</p>
+<h3 id="case-study-epic-sepsis-model-six-to-eight-years-nobody-checked">Case study: Epic Sepsis Model — six to eight years, nobody checked<a class="headerlink" href="#case-study-epic-sepsis-model-six-to-eight-years-nobody-checked" title="Permanent link">&para;</a></h3>
+<p>In 2021, a University of Michigan research team published an external audit of the most widely deployed sepsis prediction model in American hospitals. The model was embedded in Epic’s electronic health record platform and had been running in hospitals across the United States for six to eight years.</p>
+<p>The vendor’s claimed performance was an AUC of 0.76 to 0.83. The external audit measured an AUC of 0.63. Sensitivity was 33 percent. Positive predictive value was 12 percent. The model identified one out of three real sepsis cases correctly and was wrong on seven out of eight alerts it generated.</p>
+<p>No regulator had measured it. The vendor had not validated it against external data. The hospital customers had not audited it. The external audit was academic curiosity, not a compliance trigger or a market signal.</p>
+<p>The model did not fail loudly. It produced confident alerts that sent clinical teams to evaluate patients who were not developing sepsis, while missing the majority of patients who were. Clinical teams adapted their behavior around the model. The performance gap persisted for six to eight years.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The mechanism of this failure is not specific to healthcare. Any enterprise agentic product that ships with benchmark-based launch criteria and no post-launch performance monitoring is susceptible to the same pattern.</p>
+<p>The system continues operating. Performance continues degrading. The team measures adoption, not outcomes. No alarm fires. The degradation is silent until an external signal surfaces it, years later, through academic curiosity.</p>
+</div>
+<hr />
+<hr />
+<p>← <a href="../03-design/">Phase 2 — Design</a> | <a href="README.md">Index</a> | Next: <a href="../05-observe/">Phase 4 — Observe</a> →</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../03-design/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Design">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. Design
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../05-observe/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Observe">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Observe
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/yoramfriedman/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/yoramfmd/agentic-ai-for-pms" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>

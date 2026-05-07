@@ -1,0 +1,178 @@
+<svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Inter, system-ui, sans-serif">
+  <title>Agentic AI PM Lifecycle — Six Phases</title>
+  <desc>Six phases of the Agentic PM Lifecycle: AI Literacy, Discover and Decide, Design, Evaluate, Observe, and Operate and Retire.</desc>
+
+  <rect width="900" height="420" fill="#f8f9fa" rx="8"/>
+
+  <!-- Phase 0 -->
+  <rect x="20" y="60" width="130" height="300" rx="6" fill="#495057" stroke="#343a40" stroke-width="1.5"/>
+  <rect x="20" y="60" width="130" height="36" rx="6" fill="#343a40"/>
+  <rect x="20" y="84" width="130" height="12" fill="#343a40"/>
+  <text x="85" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#343a40">0</text>
+  <circle cx="85" cy="50" r="10" fill="#343a40"/>
+  <text x="85" y="54" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">0</text>
+  <text x="85" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">AI LITERACY</text>
+  <text x="85" y="112" text-anchor="middle" font-size="9" fill="#dee2e6">A state of the</text>
+  <text x="85" y="124" text-anchor="middle" font-size="9" fill="#dee2e6">organization, not a</text>
+  <text x="85" y="136" text-anchor="middle" font-size="9" fill="#dee2e6">project stage.</text>
+
+  <line x1="30" y1="158" x2="140" y2="158" stroke="#6c757d" stroke-width="0.5"/>
+  <text x="85" y="174" text-anchor="middle" font-size="8" font-weight="700" fill="#adb5bd">DELIVERABLES</text>
+  <text x="85" y="190" text-anchor="middle" font-size="8" fill="#ced4da">✓ Literacy curriculum</text>
+  <text x="85" y="203" text-anchor="middle" font-size="8" fill="#ced4da">✓ PM readiness check</text>
+  <text x="85" y="216" text-anchor="middle" font-size="8" fill="#ced4da">✓ Practice community</text>
+
+  <line x1="30" y1="230" x2="140" y2="230" stroke="#6c757d" stroke-width="0.5"/>
+  <text x="85" y="246" text-anchor="middle" font-size="8" font-weight="700" fill="#adb5bd">KEY QUESTION</text>
+  <text x="85" y="262" text-anchor="middle" font-size="8" fill="#ced4da" font-style="italic">Does this PM</text>
+  <text x="85" y="274" text-anchor="middle" font-size="8" fill="#ced4da" font-style="italic">understand what</text>
+  <text x="85" y="286" text-anchor="middle" font-size="8" fill="#ced4da" font-style="italic">an agent is and</text>
+  <text x="85" y="298" text-anchor="middle" font-size="8" fill="#ced4da" font-style="italic">is not?</text>
+
+  <!-- Arrow 0→1 -->
+  <path d="M150,210 L160,210" stroke="#adb5bd" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Phase 1 -->
+  <rect x="160" y="60" width="130" height="300" rx="6" fill="#1864ab" stroke="#1971c2" stroke-width="1.5"/>
+  <rect x="160" y="60" width="130" height="36" rx="6" fill="#1971c2"/>
+  <rect x="160" y="84" width="130" height="12" fill="#1971c2"/>
+  <circle cx="225" cy="50" r="10" fill="#1971c2"/>
+  <text x="225" y="54" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">1</text>
+  <text x="225" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">DISCOVER &amp; DECIDE</text>
+  <text x="225" y="112" text-anchor="middle" font-size="9" fill="#a5d8ff">Decide whether an</text>
+  <text x="225" y="124" text-anchor="middle" font-size="9" fill="#a5d8ff">agent is the right</text>
+  <text x="225" y="136" text-anchor="middle" font-size="9" fill="#a5d8ff">solution. Most failures</text>
+  <text x="225" y="148" text-anchor="middle" font-size="9" fill="#a5d8ff">prevented here.</text>
+
+  <line x1="170" y1="162" x2="280" y2="162" stroke="#1971c2" stroke-width="0.5"/>
+  <text x="225" y="178" text-anchor="middle" font-size="8" font-weight="700" fill="#74c0fc">DELIVERABLES</text>
+  <text x="225" y="194" text-anchor="middle" font-size="8" fill="#a5d8ff">✓ Suitability record</text>
+  <text x="225" y="207" text-anchor="middle" font-size="8" fill="#a5d8ff">✓ Context map</text>
+  <text x="225" y="220" text-anchor="middle" font-size="8" fill="#a5d8ff">✓ Cost model</text>
+  <text x="225" y="233" text-anchor="middle" font-size="8" fill="#a5d8ff">✓ Go/no-go memo</text>
+
+  <line x1="170" y1="247" x2="280" y2="247" stroke="#1971c2" stroke-width="0.5"/>
+  <text x="225" y="263" text-anchor="middle" font-size="8" font-weight="700" fill="#74c0fc">KEY QUESTION</text>
+  <text x="225" y="279" text-anchor="middle" font-size="8" fill="#a5d8ff" font-style="italic">Should we actually</text>
+  <text x="225" y="291" text-anchor="middle" font-size="8" fill="#a5d8ff" font-style="italic">build this?</text>
+
+  <!-- Arrow 1→2 -->
+  <path d="M290,210 L300,210" stroke="#adb5bd" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Phase 2 -->
+  <rect x="300" y="60" width="130" height="300" rx="6" fill="#5f3dc4" stroke="#6741d9" stroke-width="1.5"/>
+  <rect x="300" y="60" width="130" height="36" rx="6" fill="#6741d9"/>
+  <rect x="300" y="84" width="130" height="12" fill="#6741d9"/>
+  <circle cx="365" cy="50" r="10" fill="#6741d9"/>
+  <text x="365" y="54" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">2</text>
+  <text x="365" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">DESIGN</text>
+  <text x="365" y="112" text-anchor="middle" font-size="9" fill="#d0bfff">Design the agent and</text>
+  <text x="365" y="124" text-anchor="middle" font-size="9" fill="#d0bfff">the supervisory system.</text>
+  <text x="365" y="136" text-anchor="middle" font-size="9" fill="#d0bfff">Runtime behavior</text>
+  <text x="365" y="148" text-anchor="middle" font-size="9" fill="#d0bfff">engineered deliberately.</text>
+
+  <line x1="310" y1="162" x2="420" y2="162" stroke="#6741d9" stroke-width="0.5"/>
+  <text x="365" y="178" text-anchor="middle" font-size="8" font-weight="700" fill="#b197fc">DELIVERABLES</text>
+  <text x="365" y="194" text-anchor="middle" font-size="8" fill="#d0bfff">✓ Declared system type</text>
+  <text x="365" y="207" text-anchor="middle" font-size="8" fill="#d0bfff">✓ Four runtime artifacts</text>
+  <text x="365" y="220" text-anchor="middle" font-size="8" fill="#d0bfff">✓ Trust label matrix</text>
+  <text x="365" y="233" text-anchor="middle" font-size="8" fill="#d0bfff">✓ Adversarial plan</text>
+
+  <line x1="310" y1="247" x2="420" y2="247" stroke="#6741d9" stroke-width="0.5"/>
+  <text x="365" y="263" text-anchor="middle" font-size="8" font-weight="700" fill="#b197fc">KEY QUESTION</text>
+  <text x="365" y="279" text-anchor="middle" font-size="8" fill="#d0bfff" font-style="italic">What can the agent do</text>
+  <text x="365" y="291" text-anchor="middle" font-size="8" fill="#d0bfff" font-style="italic">unilaterally?</text>
+
+  <!-- Arrow 2→3 -->
+  <path d="M430,210 L440,210" stroke="#adb5bd" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Phase 3 -->
+  <rect x="440" y="60" width="130" height="300" rx="6" fill="#c92a2a" stroke="#e03131" stroke-width="1.5"/>
+  <rect x="440" y="60" width="130" height="36" rx="6" fill="#e03131"/>
+  <rect x="440" y="84" width="130" height="12" fill="#e03131"/>
+  <circle cx="505" cy="50" r="10" fill="#e03131"/>
+  <text x="505" y="54" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">3</text>
+  <text x="505" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">EVALUATE</text>
+  <text x="505" y="112" text-anchor="middle" font-size="9" fill="#ffc9c9">Prove readiness through</text>
+  <text x="505" y="124" text-anchor="middle" font-size="9" fill="#ffc9c9">evidence. Replaces the</text>
+  <text x="505" y="136" text-anchor="middle" font-size="9" fill="#ffc9c9">single pass/fail gate</text>
+  <text x="505" y="148" text-anchor="middle" font-size="9" fill="#ffc9c9">with distribution.</text>
+
+  <line x1="450" y1="162" x2="560" y2="162" stroke="#e03131" stroke-width="0.5"/>
+  <text x="505" y="178" text-anchor="middle" font-size="8" font-weight="700" fill="#ffa8a8">DELIVERABLES</text>
+  <text x="505" y="194" text-anchor="middle" font-size="8" fill="#ffc9c9">✓ Pass@K with variance</text>
+  <text x="505" y="207" text-anchor="middle" font-size="8" fill="#ffc9c9">✓ Compound probability</text>
+  <text x="505" y="220" text-anchor="middle" font-size="8" fill="#ffc9c9">✓ Judge calibration</text>
+  <text x="505" y="233" text-anchor="middle" font-size="8" fill="#ffc9c9">✓ State validation</text>
+
+  <line x1="450" y1="247" x2="560" y2="247" stroke="#e03131" stroke-width="0.5"/>
+  <text x="505" y="263" text-anchor="middle" font-size="8" font-weight="700" fill="#ffa8a8">KEY QUESTION</text>
+  <text x="505" y="279" text-anchor="middle" font-size="8" fill="#ffc9c9" font-style="italic">What is the P10 pass</text>
+  <text x="505" y="291" text-anchor="middle" font-size="8" fill="#ffc9c9" font-style="italic">rate across K runs?</text>
+
+  <!-- Arrow 3→4 -->
+  <path d="M570,210 L580,210" stroke="#adb5bd" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Phase 4 -->
+  <rect x="580" y="60" width="130" height="300" rx="6" fill="#0b7285" stroke="#0c8599" stroke-width="1.5"/>
+  <rect x="580" y="60" width="130" height="36" rx="6" fill="#0c8599"/>
+  <rect x="580" y="84" width="130" height="12" fill="#0c8599"/>
+  <circle cx="645" cy="50" r="10" fill="#0c8599"/>
+  <text x="645" y="54" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">4</text>
+  <text x="645" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">OBSERVE</text>
+  <text x="645" y="112" text-anchor="middle" font-size="9" fill="#99e9f2">Measure what the agent</text>
+  <text x="645" y="124" text-anchor="middle" font-size="9" fill="#99e9f2">actually does. Continuous</text>
+  <text x="645" y="136" text-anchor="middle" font-size="9" fill="#99e9f2">front end of Operate.</text>
+
+  <line x1="590" y1="152" x2="700" y2="152" stroke="#0c8599" stroke-width="0.5"/>
+  <text x="645" y="168" text-anchor="middle" font-size="8" font-weight="700" fill="#66d9e8">DELIVERABLES</text>
+  <text x="645" y="184" text-anchor="middle" font-size="8" fill="#99e9f2">✓ Six instruments</text>
+  <text x="645" y="197" text-anchor="middle" font-size="8" fill="#99e9f2">✓ Deployment event log</text>
+  <text x="645" y="210" text-anchor="middle" font-size="8" fill="#99e9f2">✓ Override report</text>
+  <text x="645" y="223" text-anchor="middle" font-size="8" fill="#99e9f2">✓ Performance report</text>
+
+  <line x1="590" y1="237" x2="700" y2="237" stroke="#0c8599" stroke-width="0.5"/>
+  <text x="645" y="253" text-anchor="middle" font-size="8" font-weight="700" fill="#66d9e8">KEY QUESTION</text>
+  <text x="645" y="269" text-anchor="middle" font-size="8" fill="#99e9f2" font-style="italic">Did the agent stay</text>
+  <text x="645" y="281" text-anchor="middle" font-size="8" fill="#99e9f2" font-style="italic">within its boundary?</text>
+
+  <!-- Arrow 4→5 -->
+  <path d="M710,210 L720,210" stroke="#adb5bd" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Phase 5 -->
+  <rect x="720" y="60" width="160" height="300" rx="6" fill="#814d03" stroke="#e67700" stroke-width="1.5"/>
+  <rect x="720" y="60" width="160" height="36" rx="6" fill="#e67700"/>
+  <rect x="720" y="84" width="160" height="12" fill="#e67700"/>
+  <circle cx="800" cy="50" r="10" fill="#e67700"/>
+  <text x="800" y="54" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">5</text>
+  <text x="800" y="82" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">OPERATE &amp; RETIRE</text>
+  <text x="800" y="112" text-anchor="middle" font-size="9" fill="#ffe8cc">Act on what Observe</text>
+  <text x="800" y="124" text-anchor="middle" font-size="9" fill="#ffe8cc">shows. Drift detection,</text>
+  <text x="800" y="136" text-anchor="middle" font-size="9" fill="#ffe8cc">governance at runtime,</text>
+  <text x="800" y="148" text-anchor="middle" font-size="9" fill="#ffe8cc">and retirement criteria.</text>
+
+  <line x1="730" y1="162" x2="870" y2="162" stroke="#e67700" stroke-width="0.5"/>
+  <text x="800" y="178" text-anchor="middle" font-size="8" font-weight="700" fill="#ffd8a8">DELIVERABLES</text>
+  <text x="800" y="194" text-anchor="middle" font-size="8" fill="#ffe8cc">✓ Drift detection (4 vectors)</text>
+  <text x="800" y="207" text-anchor="middle" font-size="8" fill="#ffe8cc">✓ Constitutional rules</text>
+  <text x="800" y="220" text-anchor="middle" font-size="8" fill="#ffe8cc">✓ Authority chain audit</text>
+  <text x="800" y="233" text-anchor="middle" font-size="8" fill="#ffe8cc">✓ Retirement criteria</text>
+
+  <line x1="730" y1="247" x2="870" y2="247" stroke="#e67700" stroke-width="0.5"/>
+  <text x="800" y="263" text-anchor="middle" font-size="8" font-weight="700" fill="#ffd8a8">KEY QUESTION</text>
+  <text x="800" y="279" text-anchor="middle" font-size="8" fill="#ffe8cc" font-style="italic">Is the agent still doing</text>
+  <text x="800" y="291" text-anchor="middle" font-size="8" fill="#ffe8cc" font-style="italic">what we authorized?</text>
+
+  <!-- Feedback arrow Phase 5 back to Phase 4 -->
+  <path d="M800,365 Q800,395 645,395 Q490,395 490,365" fill="none" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-sm)"/>
+  <text x="680" y="408" text-anchor="middle" font-size="8" fill="#868e96">Continuous feedback loop</text>
+
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#adb5bd"/>
+    </marker>
+    <marker id="arr-sm" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+      <path d="M0,0 L5,2.5 L0,5 Z" fill="#adb5bd"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,751 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A lifecycle framework for building, evaluating, and governing agentic AI systems">
+      
+      
+        <meta name="author" content="Yoram Friedman">
+      
+      
+        <link rel="canonical" href="https://yoramfmd.github.io/agentic-ai-for-pms/02-discover-and-decide/">
+      
+      
+        <link rel="prev" href="../01-ai-literacy/">
+      
+      
+        <link rel="next" href="../03-design/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>1. Discover and Decide - Agentic AI for Product Managers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phase-1-discover-and-decide-building-the-gono-go-case" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Agentic AI for Product Managers" class="md-header__button md-logo" aria-label="Agentic AI for Product Managers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Agentic AI for Product Managers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Discover and Decide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yoramfmd/agentic-ai-for-pms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yoramfmd/agentic-ai-for-pms
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Agentic AI for Product Managers" class="md-nav__button md-logo" aria-label="Agentic AI for Product Managers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Agentic AI for Product Managers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yoramfmd/agentic-ai-for-pms" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yoramfmd/agentic-ai-for-pms
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-ai-literacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0. AI Literacy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Discover and Decide
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-evaluate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Evaluate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-observe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Observe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-operate-govern-retire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Operate and Retire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-tools-and-templates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools and Templates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>← <a href="../01-ai-literacy/">Phase 0 — AI Literacy</a> | <a href="README.md">Index</a> | Next: <a href="../03-design/">Phase 2 — Design</a> →</p>
+<hr />
+<h1 id="phase-1-discover-and-decide-building-the-gono-go-case">Phase 1 — Discover and Decide: Building the Go/No-Go Case<a class="headerlink" href="#phase-1-discover-and-decide-building-the-gono-go-case" title="Permanent link">&para;</a></h1>
+<h3 id="the-most-expensive-mistake-happens-before-engineering-starts">The most expensive mistake happens before engineering starts<a class="headerlink" href="#the-most-expensive-mistake-happens-before-engineering-starts" title="Permanent link">&para;</a></h3>
+<p>In traditional product management, a feature idea that makes it onto the roadmap usually gets built. The question is scope, timeline, and priority, not whether. The discovery process is about understanding the problem deeply enough to build the right solution.</p>
+<p>For agentic AI, discovery has to answer a harder question: should this be an agent at all? Not every problem that can be solved with an agent should be. Some problems are better solved with a rule, a better dashboard, or a human workflow with clearer tooling. An agentic solution for the wrong problem is more expensive, more risky, and harder to govern than a simpler solution for the right problem.</p>
+<p>The teams that learn this lesson most expensively are the ones who discover it after a sprint’s worth of engineering investment has created organizational momentum against stopping. This phase exists to create a one-page decision record before any engineering begins.</p>
+<h3 id="the-right-comparison">The right comparison<a class="headerlink" href="#the-right-comparison" title="Permanent link">&para;</a></h3>
+<p>The question is not “is the agent better than doing nothing?” The question is “is the agent better than the current best alternative at comparable total cost?”</p>
+<p>This distinction matters because agentic AI business cases almost always compare against a blank-page baseline. The calculation looks like: we spend X dollars per month on human agents handling this workflow; an AI agent costs Y; Y is less than X; therefore the AI agent saves X minus Y per month. This calculation is wrong in at least three ways, and we will walk through all three in the cost model section below. But the first problem is the baseline itself.</p>
+<p>The current best alternative for most enterprise workflows is not “doing nothing.” It is a combination of experienced humans, RPA scripts, rules-based automation, and tribal knowledge about which edge cases require escalation. That baseline has known costs, known failure modes, and known strengths. The correct comparison is the agent versus that baseline, not the agent versus a greenfield.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>The nine-second case.</strong> A developer gave an agent write access to a production database as a convenience during testing. The access was never reviewed before deployment. Nine seconds after receiving an ambiguous instruction to “clean up old records,” the agent deleted a production table containing three years of transaction history.</p>
+<p>No PM had explicitly decided that production write access was within scope. No PM had explicitly decided it was not. The permission persisted because no one made a deliberate decision about it. The constraint that was never written became a catastrophic default.</p>
+<p>Every agentic deployment has decisions that were never made explicitly. They become defaults. Find them before deployment, not after.</p>
+</div>
+<h3 id="the-four-suitability-conditions">The four suitability conditions<a class="headerlink" href="#the-four-suitability-conditions" title="Permanent link">&para;</a></h3>
+<p>Before any agentic project proceeds past the discovery phase, four conditions must be evaluated. They are not a weighted scorecard. All four must pass. A single failing condition means the feature needs to be redesigned before any engineering begins, either toward a more limited contract or toward a completely different approach.</p>
+<p><strong>Condition 1: Repeats at volume.</strong></p>
+<p>The task must occur frequently enough that the development, operational, and governance investment is justified by the throughput gain. An agent requires an evaluation pipeline, a monitoring stack, a governance process, and ongoing human oversight. These are not one-time costs; they are recurring operational overhead. A task that happens twenty times a month rarely justifies that overhead. A task that happens ten thousand times a day usually does.</p>
+<p>The volume threshold is not a fixed number. It depends on the cost of the task, the quality gap between human and agentic execution, and the cost of the required governance infrastructure. Calculate it before the sprint starts.</p>
+<p><strong>Condition 2: Outcome measurable and trusted.</strong></p>
+<p>There must be a clear definition of what a correct output looks like, a reliable way to measure it, and organizational agreement that the measure is valid.</p>
+<p>This condition fails more often than teams expect. “Good customer service response” is not a measurable outcome. “Customer response rated 4 or higher by the recipient on a 5-point scale, with no required escalation within 48 hours” is measurable. The difference matters, because if you cannot define done before you build, you cannot tell whether the agent is performing after you ship.</p>
+<p><strong>Condition 3: Tool use bounded.</strong></p>
+<p>The set of systems and actions the agent needs access to must be enumerable and limited. An agent that “might need access to anything depending on the situation” has an authorization surface too large to govern. The agent should be able to do its job with a specific, documented list of tools, each with a clearly scoped permission.</p>
+<p>If the design requires unbounded tool access, the problem is not yet scoped well enough to be built safely.</p>
+<p><strong>Condition 4: Consequences recoverable.</strong></p>
+<p>When the agent is wrong, the outcome must be reversible or correctable within an acceptable time window.</p>
+<div class="admonition warning">
+<p class="admonition-title">Check consequences recoverable first, before the other three conditions.</p>
+<p>This is the most frequently skipped condition and the most important one. If the failure mode is irreversible, no amount of model quality, context quality, or evaluation coverage makes autonomous operation safe. The correct response to a failed recovery condition is not “build better guardrails.” It is a redesign toward Contract 2: the agent prepares the recommendation, and a human makes the final call.</p>
+<p>An agent that autonomously approves vendor payments, deletes customer records, or executes financial transactions will fail this condition. That is not a reason to abandon the project. It is a reason to redesign it.</p>
+</div>
+<h3 id="context-sufficiency-check">Context sufficiency check<a class="headerlink" href="#context-sufficiency-check" title="Permanent link">&para;</a></h3>
+<p>Beyond the four suitability conditions, the agent must have access to the context it needs to make correct decisions. This is the Iceberg check applied specifically to the proposed use case.</p>
+<p>Three categories of context routinely go missing in enterprise agentic deployments.</p>
+<p><strong>Contractual and policy obligations.</strong> The customer who has a data processing restriction that exempts them from automated decisions. The vendor whose contract requires a named human approver for any purchase over a specific amount. The account covered by a regulatory requirement that changes which actions are permitted. This context typically lives in legal or compliance systems that are not connected to the operational systems the agent reads.</p>
+<p><strong>Governance and relationship history.</strong> The customer whose last three tickets were escalated to legal. The vendor who failed a compliance audit six months ago. The account that is under active contract renegotiation. The supplier whose relationship is being wound down and who should not receive new commitments. This context typically lives in email, in call notes, or in the institutional memory of the account manager, none of which are structured data.</p>
+<p><strong>Temporal validity.</strong> The status change that happened yesterday that has not yet propagated to the system of record the agent reads. The approval that was submitted but not yet confirmed. The flag that was set based on data from two quarters ago and has not been refreshed. The agent sees the field; it cannot see when the field was last accurate.</p>
+<p>If the context sufficiency check reveals that the agent is missing information in any of these categories, there are two correct responses: enrich the context before agentic deployment, or design the agent to escalate to human judgment whenever the missing context would affect the decision.</p>
+<p>There is one incorrect response: assume the agent will figure it out.</p>
+<h3 id="the-first-contact-training-data-mismatch">The first-contact training data mismatch<a class="headerlink" href="#the-first-contact-training-data-mismatch" title="Permanent link">&para;</a></h3>
+<p>AI models are trained on completed cases: customer service tickets where the resolution is known, clinical notes where the outcome is documented, financial transactions where the final disposition is recorded. They see the full arc of the story, from beginning to end.</p>
+<p>They are deployed at the beginning of cases: a new customer complaint where the resolution is unknown, a new clinical encounter where the diagnosis has not yet been made, a new transaction that has not yet settled.</p>
+<p>This creates a systematic gap between what the model learned on and what it is asked to do. The model’s patterns were learned from resolved cases. It is being asked to apply those patterns to unresolved ones. This is not a flaw that can be fixed with better training data; it is a structural condition of agentic deployment.</p>
+<p>The PM implication: be skeptical of models that perform exceptionally well on historical data but have not been tested on live, unresolved cases. The historical performance is real. It may not transfer to the production context.</p>
+<h3 id="the-cost-model-what-the-business-case-is-probably-missing">The cost model: what the business case is probably missing<a class="headerlink" href="#the-cost-model-what-the-business-case-is-probably-missing" title="Permanent link">&para;</a></h3>
+<p>Business cases for agentic AI are systematically 40 to 60 percent too low. The reasons are consistent across industries and organizations, and they are worth understanding in detail before you present a cost model to your leadership team.</p>
+<h4 id="the-floor-price-and-platform-incumbency">The floor price and platform incumbency<a class="headerlink" href="#the-floor-price-and-platform-incumbency" title="Permanent link">&para;</a></h4>
+<p>The conventional way to think about agentic costs goes like this: the agentic solution has a higher upfront cost than traditional software, but lower marginal cost per task at scale. At sufficient volume, the curves cross and the agentic solution wins on unit economics.</p>
+<p>This model is approximately correct for organizations that are building from scratch with no existing AI-capable platform. It is frequently wrong for SAP customers.</p>
+<p>SAP Joule, Anthropic’s capabilities via SAP AI Core, and several other AI platform capabilities are included in existing SAP cloud subscription licensing. For these customers, the incremental floor price of an agentic layer built on the existing platform can be near zero, because the infrastructure is already paid for. The relevant question is not “what does the agentic solution cost?” but “what is the incremental cost above the existing license?”</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is an important caveat. Current enterprise AI pricing is partially suppressed. Vendors are absorbing AI infrastructure costs to defend existing seat revenue and prevent customers from switching during the consolidation phase. SAP CEO Christian Klein has publicly stated that SAP is shifting from per-user to AI-consumption pricing because as agents replace human users, per-seat revenue collapses.</p>
+<p>Build your business case on current prices. Also build a stress test that asks: does this still work if AI consumption costs triple in two years? Because they might.</p>
+</div>
+<h4 id="how-ai-is-actually-priced-tokens">How AI is actually priced: tokens<a class="headerlink" href="#how-ai-is-actually-priced-tokens" title="Permanent link">&para;</a></h4>
+<p>Unlike traditional SaaS, which is typically priced per seat or per transaction at a flat rate, AI inference is priced per <strong>token</strong>. A token is approximately four characters of text, so a typical sentence contains 15 to 25 tokens. The key thing to understand about token pricing is that it is not symmetric.</p>
+<p>Input tokens (the text you send to the model, including instructions, context, and the customer’s question) cost one amount. Output tokens (the text the model generates in response) cost three to five times more, because generating text requires sequential computation that cannot be parallelized the way processing input can.</p>
+<p>As of early 2026, representative pricing for widely deployed models:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Input (per million tokens)</th>
+<th>Output (per million tokens)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPT-4o</td>
+<td>$2.50</td>
+<td>$10.00</td>
+</tr>
+<tr>
+<td>Claude Sonnet (mid-tier)</td>
+<td>$3.00</td>
+<td>$15.00</td>
+</tr>
+<tr>
+<td>GPT-4o-mini</td>
+<td>$0.15</td>
+<td>$0.60</td>
+</tr>
+<tr>
+<td>Llama 70B self-hosted</td>
+<td>~$0.40</td>
+<td>~$0.40</td>
+</tr>
+</tbody>
+</table>
+<p>The cost per task depends almost entirely on task complexity, which determines how many tokens are consumed. This is the most commonly missed calculation in agentic business cases:</p>
+<p>Simple tasks (email classification, FAQ response, single-step output): $0.002 to $0.04 per task.</p>
+<p>Moderate tasks (customer support with two to three steps and tool use): $0.09 to $0.26 per task.</p>
+<p>Complex tasks (dispute resolution, five or more steps, multiple tools, extended reasoning): $0.50 to $2.00 or more per task.</p>
+<p>A business case built on simple-task pricing applied to a complex-task workflow will underestimate actual cost by a factor of ten to fifty.</p>
+<h4 id="the-four-token-cost-drivers">The four token cost drivers<a class="headerlink" href="#the-four-token-cost-drivers" title="Permanent link">&para;</a></h4>
+<p>Four mechanisms produce cost surprises in production that teams did not anticipate from their pricing estimates.</p>
+<p><strong>Input/output asymmetry.</strong> Because output tokens cost three to five times more than input tokens, any feature that generates long outputs (summaries, recommendations, detailed plans, drafted communications) is significantly more expensive per interaction than the input volume alone would suggest.</p>
+<p><strong>Reasoning depth.</strong> When a model works through a complex problem step by step before giving an answer, the thinking process itself is billed as tokens. A model that “reasons through” a difficult customer escalation before drafting a response generates hundreds of extra tokens per call. At high volume, reasoning tokens become the dominant cost driver.</p>
+<p><strong>RAG context accumulation.</strong> RAG stands for Retrieval-Augmented Generation, which is the technique of inserting relevant documents into the model’s context before it responds. This improves quality, but it also means that every piece of retrieved context adds input tokens. In a multi-step workflow, context accumulates: by step five, the agent’s working memory includes the original input, all retrieved documents, and the outputs of steps one through four. The cost at step five is much higher than the cost at step one.</p>
+<p><strong>Multimodal inputs.</strong> If the agent processes images, audio, or video, those inputs are priced differently from text tokens, typically at a significant premium. Any workflow that processes invoices, scanned forms, screenshots, or recorded calls has a higher per-interaction cost than a text-only workflow.</p>
+<h4 id="implementation-and-supervision-the-excluded-costs">Implementation and supervision: the excluded costs<a class="headerlink" href="#implementation-and-supervision-the-excluded-costs" title="Permanent link">&para;</a></h4>
+<p>The software license is the smallest line item in a well-run agentic deployment. Research on RPA and traditional automation consistently finds that implementation and ongoing maintenance account for 70 to 75 percent of total three-year cost of ownership, while the software license accounts for 25 to 30 percent.</p>
+<p>Agentic AI adds a cost category that traditional software does not have: the <strong>observability and governance stack</strong>. This is the infrastructure for measuring whether the agent is performing correctly in production: evaluation pipelines, monitoring dashboards, alerting on drift, human escalation workflows, periodic audit processes. This stack has no direct equivalent in RPA or traditional SaaS. It is permanent operational overhead, not a one-time build cost.</p>
+<p>Business cases that exclude the governance stack understate total cost of ownership by 30 to 50 percent. Gartner (February 2026) predicts that more than 40 percent of agentic AI projects will be canceled by 2027 due to unforeseen costs in this layer specifically.</p>
+<h4 id="six-cost-curves-and-the-break-even-framework">Six cost curves and the break-even framework<a class="headerlink" href="#six-cost-curves-and-the-break-even-framework" title="Permanent link">&para;</a></h4>
+<p>A complete cost model compares six curves against projected monthly task volume:</p>
+<p><strong>Human (onshore):</strong> A step function. Costs jump at each capacity threshold as you add headcount. Approximately one additional agent per 900 tasks per month at fully loaded onshore cost.</p>
+<p><strong>Human (outsourced):</strong> Same step function shape, lower cost per headcount. This is the most commonly omitted baseline in agentic business cases.</p>
+<p><strong>IVR or traditional SaaS:</strong> Linear from a floor price. Constant marginal cost per task regardless of complexity.</p>
+<p><strong>Agentic simple, brownfield:</strong> Starts at or near zero for platform-licensed enterprises, then curves upward gently because simple tasks keep token cost low.</p>
+<p><strong>Agentic complex, brownfield:</strong> Same low starting point, but steeper curve as reasoning complexity and multi-step workflows drive up token consumption. Can cross the outsourced human curve at moderate volume.</p>
+<p><strong>Agentic complex, greenfield:</strong> Starts above the IVR floor (the build cost must be amortized), with the steepest curve. Can exceed onshore human cost at high volume.</p>
+<p>The most important scenario to run before presenting a business case: set the outsourced cost to $800 per agent per month, which is realistic for Southeast Asia or Eastern Europe. At that cost, the agentic complex brownfield curve never crosses below the outsourced human curve at any realistic monthly volume. The business case that looked compelling was comparing against the wrong baseline.</p>
+<h4 id="the-klarna-case-what-the-40m-claim-left-out">The Klarna case: what the $40M claim left out<a class="headerlink" href="#the-klarna-case-what-the-40m-claim-left-out" title="Permanent link">&para;</a></h4>
+<p>In February 2024, Klarna issued a press release claiming that its AI customer service deployment had handled 2.3 million conversations in its first month, was equivalent to 700 full-time agents, and would generate approximately $40 million in profit improvement for the year. This claim circulated widely and became a frequently cited proof point in agentic AI business cases.</p>
+<p>There are several things worth knowing about this claim.</p>
+<p>The $40 million figure was an estimate of cost avoidance from not hiring additional human agents to handle growth volume. It was not savings from replacing existing agents. Klarna’s headcount reduction over the same period was attributed primarily to attrition and a hiring freeze, not direct AI-driven layoffs. This distinction was absent from most media coverage.</p>
+<p>By May 2025, CEO Sebastian Siemiatkowski told Bloomberg that cost had been “too predominant an evaluation factor” and that the result was lower quality. Customer satisfaction dropped on complex and emotionally charged interactions. The AI produced incorrect information (hallucinations) in approximately 5 percent of conversations. Compliance concerns emerged around autonomous dispute handling and account closures. By September 2025, Klarna was redeploying engineers to customer support. By January 2026, the company was publicly recruiting for remote human customer service roles.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The complete list of cost components excluded from Klarna’s original $40M estimate:
+AI API and infrastructure operational cost; observability and monitoring stack; customer satisfaction degradation on complex cases; customer retention impact; escalation premium (when the AI failed first, human resolution cost was elevated); compliance risk and redesign; rehiring and retraining; institutional knowledge loss.</p>
+<p>The reconstructed verdict: the $40M claim holds as directionally correct if the comparison is against hiring 700 additional agents. It is substantially overstated if the correct comparison is a hybrid deployment with AI handling simple queries and humans handling complex ones. Production data from 2026 shows hybrid deployments at 65-75% AI closing the CSAT gap to near-zero while maintaining most of the cost reduction.</p>
+</div>
+<p>Every agentic AI business case you review should be asked: what is excluded? Have you modeled the governance stack? Have you compared against outsourced humans, not just onshore ones? Have you included a repricing stress test?</p>
+<h3 id="the-gono-go-memo">The go/no-go memo<a class="headerlink" href="#the-gono-go-memo" title="Permanent link">&para;</a></h3>
+<p>One page. Five questions. Required before any sprint starts.</p>
+<ol>
+<li>Which of the four suitability conditions does this use case satisfy? If any fail, what is the redesigned scope?</li>
+<li>What context does the agent need that it currently cannot see? What is the plan to close that gap before deployment?</li>
+<li>Which of the Three Contracts does this feature operate under? Is that contract defensible given the consequence classification?</li>
+<li>What is the realistic per-task cost at expected complexity? What does the three-year total cost of ownership look like, including the governance stack?</li>
+<li>If the agent is wrong at scale, what does recovery look like? Who is notified, how fast, and what is the compensating action?</li>
+</ol>
+<p>If any question cannot be answered before engineering starts, the feature is not ready to be engineered. Not “ready with caveats.” Not ready.</p>
+<h3 id="when-the-answer-is-no">When the answer is no<a class="headerlink" href="#when-the-answer-is-no" title="Permanent link">&para;</a></h3>
+<p>A go/no-go decision that produces “no” to autonomous operation is a correct product decision. It is not a failed project. Three paths forward:</p>
+<p><strong>Redesign to Contract 2 (copilot).</strong> The agent prepares a decision package and presents it for human review. The human makes the final call. This passes the consequences-recoverable condition for almost any use case, delivers most of the operational value of the original proposal, and creates a safe foundation from which to evolve toward greater autonomy after the governance infrastructure is in place.</p>
+<p><strong>Defer with conditions.</strong> Identify the specific conditions that would change the assessment: context availability, volume threshold, governance infrastructure. Build toward those conditions explicitly. Set a review date. This is not indefinite deferral; it is phased deployment with honest milestones.</p>
+<p><strong>Redesign the problem.</strong> Sometimes the agentic framing is wrong for the goal. The underlying problem may be better solved with a clearer dashboard, a more targeted rule, or a redesigned human workflow. The question is not “how do we make an agent work here?” It is “what is the best solution to this problem?”</p>
+<h3 id="case-study-the-bdc-data-retention-agent">Case study: the BDC data retention agent<a class="headerlink" href="#case-study-the-bdc-data-retention-agent" title="Permanent link">&para;</a></h3>
+<p>A Business Data Cloud product manager proposes an autonomous agent that reviews customer data retention change requests and approves or rejects them without human review. The proposal has clear volume justification and executive sponsorship.</p>
+<p>Running the four suitability conditions:</p>
+<p>Consequences recoverable: data deletion authorized by an incorrect agent decision cannot be undone. This condition fails.</p>
+<p>Outcome measurable and trusted: the team cannot agree on what a correct decision looks like for edge cases involving conflicting contractual obligations. This condition is at risk.</p>
+<p>Context sufficiency: the agent cannot see the customer’s contractual data processing obligations, active legal holds, or jurisdiction-specific retention requirements. These are in systems the agent does not connect to.</p>
+<p>The correct design is Contract 2: the agent reviews the request, surfaces all relevant context it can find, flags the cases where context is incomplete, and prepares a structured recommendation for a human reviewer who makes the final determination. This design passes all four conditions, delivers most of the value, and creates the context enrichment and governance infrastructure that would be needed before autonomous operation could be considered.</p>
+<hr />
+<p>← <a href="../01-ai-literacy/">Phase 0 — AI Literacy</a> | <a href="README.md">Index</a> | Next: <a href="../03-design/">Phase 2 — Design</a> →</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-ai-literacy/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 0. AI Literacy">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                0. AI Literacy
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-design/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Design">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. Design
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/yoramfriedman/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/yoramfmd/agentic-ai-for-pms" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.tooltips", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+    
+  </body>
+</html>
