@@ -1,6 +1,3 @@
-# Agentic AI for Product Managers
-## A Lifecycle Framework for Building, Evaluating, and Governing Agentic Systems
-
 *Version 3.0 | Agentic PM Lifecycle Series*
 
 ---
@@ -16,13 +13,13 @@ Each section is self-contained. Read them in order the first time. Use them as r
 | Section | What it covers |
 |---|---|
 | [Preface](00-preface.md) | Why the old PM frameworks are not enough, the new questions agentic AI requires, how this framework is organized |
-| [Phase 0 — AI Literacy](01-ai-literacy.md) | Five mental model shifts every PM needs before any agentic project begins |
-| [Phase 1 — Discover and Decide](02-discover-and-decide.md) | The four suitability conditions, the cost model, the go/no-go memo |
-| [Phase 2 — Design](03-design.md) | The four runtime artifacts, consequence classification, adversarial design |
-| [Phase 3 — Evaluate](04-evaluate.md) | Pass@K, compound probability, LLM-as-judge, True Negative Rate |
-| [Phase 4 — Observe](05-observe.md) | Six observation instruments, automation complacency, silent degradation |
-| [Phase 5 — Operate, Govern, and Retire](06-operate-govern-retire.md) | Four drift vectors, constitutional rules, authority delegation chain, retirement |
-| [PM Tools and Templates](07-tools-and-templates.md) | Go/no-go memo, runtime artifact checklist, eval deliverables, drift policy |
+| [0. AI Literacy](01-ai-literacy.md) | Five mental model shifts every PM needs before any agentic project begins |
+| [1. Discover and Decide](02-discover-and-decide.md) | The four suitability conditions, the cost model, the go/no-go memo |
+| [2. Design](03-design.md) | The four runtime artifacts, consequence classification, adversarial design |
+| [3. Evaluate](04-evaluate.md) | Pass@K, compound probability, LLM-as-judge, True Negative Rate |
+| [4. Observe](05-observe.md) | Six observation instruments, automation complacency, silent degradation |
+| [5. Operate and Retire](06-operate-govern-retire.md) | Four drift vectors, constitutional rules, authority delegation chain, retirement |
+| [Tools and Templates](07-tools-and-templates.md) | Go/no-go memo, runtime artifact checklist, eval deliverables, drift policy |
 
 ---
 
@@ -69,7 +66,7 @@ Each section is self-contained. Read them in order the first time. Use them as r
 
 ## Framework glossary
 
-A full glossary of all terms used in this framework is at the end of the [PM Tools and Templates](07-tools-and-templates.md) section.
+A full glossary of all terms used in this framework is at the end of the [Tools and Templates](07-tools-and-templates.md) section.
 
 ---
 

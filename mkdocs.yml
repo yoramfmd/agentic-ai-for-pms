@@ -39,13 +39,13 @@ repo_name: yoramfmd/agentic-ai-for-pms
 nav:
   - Home: index.md
   - Preface: 00-preface.md
-  - "Phase 0 — AI Literacy": 01-ai-literacy.md
-  - "Phase 1 — Discover and Decide": 02-discover-and-decide.md
-  - "Phase 2 — Design": 03-design.md
-  - "Phase 3 — Evaluate": 04-evaluate.md
-  - "Phase 4 — Observe": 05-observe.md
-  - "Phase 5 — Operate and Retire": 06-operate-govern-retire.md
-  - PM Tools and Templates: 07-tools-and-templates.md
+  - "0. AI Literacy": 01-ai-literacy.md
+  - "1. Discover and Decide": 02-discover-and-decide.md
+  - "2. Design": 03-design.md
+  - "3. Evaluate": 04-evaluate.md
+  - "4. Observe": 05-observe.md
+  - "5. Operate and Retire": 06-operate-govern-retire.md
+  - Tools and Templates: 07-tools-and-templates.md
 
 markdown_extensions:
   - admonition
