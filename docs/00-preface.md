@@ -24,15 +24,17 @@ There is a structural problem in how organizations are deploying AI. The technol
 
 This is not a criticism of the training programs. They could not have anticipated the pace of change. The point is that the gap between what most PMs currently know and what they need to know to ship agentic AI responsibly is real, it is growing, and no one is going to close it through a quarterly training seminar.
 
-> [!NOTE]
-> **Era of ferment.** Technology markets go through a period called the "era of ferment" before a dominant design emerges and the market consolidates. During ferment, many competing architectures coexist, entry rates are high, and competitive asymmetries form beneath the noise. The term comes from MIT economists Utterback and Abernathy; Harvard Business School professor Karim Lakhani has applied it specifically to the current AI market, calling it "structured ferment."
->
-> The comparison charts that rank AI models by speed and reasoning score tell you what week it is. They do not tell you where the stable ground is. The stable ground is not the model. It is the data, the context architecture, the workflow integration, and the organizational trust that governance structures make possible. Those are product decisions. They are your decisions.
+!!! note
+    **Era of ferment.** Technology markets go through a period called the "era of ferment" before a dominant design emerges and the market consolidates. During ferment, many competing architectures coexist, entry rates are high, and competitive asymmetries form beneath the noise. The term comes from MIT economists Utterback and Abernathy; Harvard Business School professor Karim Lakhani has applied it specifically to the current AI market, calling it "structured ferment."
+
+    The comparison charts that rank AI models by speed and reasoning score tell you what week it is. They do not tell you where the stable ground is. The stable ground is not the model. It is the data, the context architecture, the workflow integration, and the organizational trust that governance structures make possible. Those are product decisions. They are your decisions.
+
 
 There is also a pricing dynamic worth naming. AI inference costs have fallen roughly a thousand times in three years. But total enterprise AI spending has risen sharply in the same period. The unit gets cheaper; the units deployed multiply.
 
-> [!NOTE]
-> **LLMflation.** The condition in which AI inference unit costs fall while total AI spending rises, because cost reduction creates applications that were not economical at prior price points. The market expands faster than prices contract. This matters for your business cases, which are covered in [Phase 1](02-discover-and-decide.md).
+!!! note
+    **LLMflation.** The condition in which AI inference unit costs fall while total AI spending rises, because cost reduction creates applications that were not economical at prior price points. The market expands faster than prices contract. This matters for your business cases, which are covered in [Phase 1](02-discover-and-decide.md).
+
 
 ---
 
