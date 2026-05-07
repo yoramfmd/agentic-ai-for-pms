@@ -26,10 +26,9 @@ The P50 (median) pass rate is the expected performance in a typical interaction.
 
 The P10 pass rate is the performance in the worst-case 10 percent of runs. A P10 of 40 percent means that in the worst scenarios, the agent succeeds less than half the time. This is the number that determines user experience at scale.
 
-> [!IMPORTANT]
-> **One passing test does not prove fixed behavior. It proves the system worked once.**
->
-> This is the single most important shift from traditional quality assurance to agentic evaluation. Your team will feel pressure to treat a green eval run as evidence of readiness. It is not. The question is not "did it pass?" It is "what is the pass rate across K runs on the full input distribution, reported as a distribution?"
+!!! important "One passing test does not prove fixed behavior. It proves the system worked once."
+    This is the single most important shift from traditional quality assurance to agentic evaluation. Your team will feel pressure to treat a green eval run as evidence of readiness. It is not. The question is not “did it pass?” It is “what is the pass rate across K runs on the full input distribution, reported as a distribution?”
+
 
 ### Break 2: Compound probability
 
@@ -42,8 +41,9 @@ For a 10-step workflow with 99 percent per-step accuracy: 90 percent end-to-end 
 
 Enterprise deployment thresholds for mission-critical workflows are typically 95 to 99 percent end-to-end reliability. Achieving 99 percent end-to-end on a 10-step workflow requires 99.9 percent per-step accuracy, which is above the current performance of frontier models on complex judgment tasks.
 
-> [!WARNING]
-> Do the compound probability calculation before any multi-step agentic deployment. It is arithmetic. It does not require a data scientist. Multiply the per-step pass rates. If the result is below your acceptable end-to-end threshold, the workflow cannot be safely deployed at that level of autonomy with current model performance.
+!!! warning
+    Do the compound probability calculation before any multi-step agentic deployment. It is arithmetic. It does not require a data scientist. Multiply the per-step pass rates. If the result is below your acceptable end-to-end threshold, the workflow cannot be safely deployed at that level of autonomy with current model performance.
+
 
 This calculation frequently reveals that a multi-step autonomous workflow is not deployable at Contract 3, but is deployable at Contract 2 if human review is inserted at the steps with the lowest per-step accuracy.
 
@@ -71,7 +71,7 @@ Four categories of inputs every evaluation set requires:
 
 **Edge cases.** Incomplete inputs, missing context, ambiguous instructions, unusual but valid scenarios. These represent the normal degraded conditions of production operation. Real users do not always provide clean, well-structured inputs.
 
-**Adversarial inputs.** Instructions embedded in the agent's inputs that attempt to redirect its behavior, conflicting signals, deliberately confusing prompts. Required for any system that processes external content.
+**Adversarial inputs.** Instructions embedded in the agent’s inputs that attempt to redirect its behavior, conflicting signals, deliberately confusing prompts. Required for any system that processes external content.
 
 **Distribution shift.** Real user inputs collected after launch, the cases you never anticipated. This category can only be populated after deployment, which means the evaluation set must be treated as a living document updated continuously, not a static launch checklist.
 
@@ -91,20 +91,19 @@ Every action the agent takes must have a corresponding state validation check: t
 
 Human review of every evaluation output does not scale. A production agentic system processing ten thousand interactions per day cannot have each interaction reviewed by a human evaluator. The evaluation pipeline must be automated.
 
-**LLM-as-judge** is the technique of using a second language model to evaluate the quality of the first model's outputs. The judge model receives the agent's output and evaluates it against a rubric: did it complete the task correctly, did it comply with policy, did it produce coherent reasoning, did it stay within its authorized scope?
+**LLM-as-judge** is the technique of using a second language model to evaluate the quality of the first model’s outputs. The judge model receives the agent’s output and evaluates it against a rubric: did it complete the task correctly, did it comply with policy, did it produce coherent reasoning, did it stay within its authorized scope?
 
 This scales. It also introduces a specific risk that must be managed.
 
-If the judge model was trained on similar data to the agent model, both share the same gaps in their training distribution. The judge cannot see what the agent cannot see. On the cases where both models have a blind spot, the judge will rate the agent's flawed output as correct. High judge scores can mask correlated failures.
+If the judge model was trained on similar data to the agent model, both share the same gaps in their training distribution. The judge cannot see what the agent cannot see. On the cases where both models have a blind spot, the judge will rate the agent’s flawed output as correct. High judge scores can mask correlated failures.
 
 The metric that determines whether the judge is useful is **True Negative Rate (TNR)**: the proportion of real failures that the judge correctly identifies. This is different from overall accuracy.
 
 A judge with 95 percent overall accuracy and 40 percent TNR is correctly catching fewer than half of the real failures while appearing to perform well. A judge with 80 percent overall accuracy and 90 percent TNR is catching nearly all real failures and providing meaningful coverage, even though its overall accuracy is lower.
 
-> [!IMPORTANT]
-> **Before trusting any LLM-as-judge system, calibrate it against a set of human-labeled known failures and measure TNR directly.**
->
-> This step is skipped by most teams. It is not skippable in production. The calibration must be repeated any time either the agent model or the judge model is updated, because a model update can change both what the agent fails on and what the judge can catch.
+!!! important "Before trusting any LLM-as-judge system, calibrate it against a set of human-labeled known failures and measure TNR directly."
+    This step is skipped by most teams. It is not skippable in production. The calibration must be repeated any time either the agent model or the judge model is updated, because a model update can change both what the agent fails on and what the judge can catch.
+
 
 ### The 37 percent production gap
 
@@ -122,9 +121,9 @@ A PM who cannot answer the following three questions has not shipped an agentic 
 
 1. What is the Pass@K distribution across the full input set, including edge cases and adversarial inputs? What is the P10 score, and does it meet the defined minimum?
 
-2. What is the judge's True Negative Rate on a human-labeled failure set? Was it measured, or assumed?
+2. What is the judge’s True Negative Rate on a human-labeled failure set? Was it measured, or assumed?
 
-3. What is the acceptable end-to-end success rate given the compound probability math for this workflow's step count? Has anyone done the calculation?
+3. What is the acceptable end-to-end success rate given the compound probability math for this workflow’s step count? Has anyone done the calculation?
 
 ### Three launch deliverables
 
@@ -136,18 +135,19 @@ A PM who cannot answer the following three questions has not shipped an agentic 
 
 ### Case study: Epic Sepsis Model — six to eight years, nobody checked
 
-In 2021, a University of Michigan research team published an external audit of the most widely deployed sepsis prediction model in American hospitals. The model was embedded in Epic's electronic health record platform and had been running in hospitals across the United States for six to eight years.
+In 2021, a University of Michigan research team published an external audit of the most widely deployed sepsis prediction model in American hospitals. The model was embedded in Epic’s electronic health record platform and had been running in hospitals across the United States for six to eight years.
 
-The vendor's claimed performance was an AUC of 0.76 to 0.83. The external audit measured an AUC of 0.63. Sensitivity was 33 percent. Positive predictive value was 12 percent. The model identified one out of three real sepsis cases correctly and was wrong on seven out of eight alerts it generated.
+The vendor’s claimed performance was an AUC of 0.76 to 0.83. The external audit measured an AUC of 0.63. Sensitivity was 33 percent. Positive predictive value was 12 percent. The model identified one out of three real sepsis cases correctly and was wrong on seven out of eight alerts it generated.
 
 No regulator had measured it. The vendor had not validated it against external data. The hospital customers had not audited it. The external audit was academic curiosity, not a compliance trigger or a market signal.
 
 The model did not fail loudly. It produced confident alerts that sent clinical teams to evaluate patients who were not developing sepsis, while missing the majority of patients who were. Clinical teams adapted their behavior around the model. The performance gap persisted for six to eight years.
 
-> [!IMPORTANT]
-> The mechanism of this failure is not specific to healthcare. Any enterprise agentic product that ships with benchmark-based launch criteria and no post-launch performance monitoring is susceptible to the same pattern.
->
-> The system continues operating. Performance continues degrading. The team measures adoption, not outcomes. No alarm fires. The degradation is silent until an external signal surfaces it, years later, through academic curiosity.
+!!! important
+    The mechanism of this failure is not specific to healthcare. Any enterprise agentic product that ships with benchmark-based launch criteria and no post-launch performance monitoring is susceptible to the same pattern.
+
+    The system continues operating. Performance continues degrading. The team measures adoption, not outcomes. No alarm fires. The degradation is silent until an external signal surfaces it, years later, through academic curiosity.
+
 
 ---
 
