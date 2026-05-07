@@ -1,0 +1,65 @@
+site_name: Agentic AI for Product Managers
+site_description: A lifecycle framework for building, evaluating, and governing agentic AI systems
+site_author: Yoram Friedman
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.tooltips
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Preface: 00-preface.md
+  - Phase 0 — AI Literacy: 01-ai-literacy.md
+  - Phase 1 — Discover and Decide: 02-discover-and-decide.md
+  - Phase 2 — Design: 03-design.md
+  - Phase 3 — Evaluate: 04-evaluate.md
+  - Phase 4 — Observe: 05-observe.md
+  - Phase 5 — Operate and Retire: 06-operate-govern-retire.md
+  - PM Tools and Templates: 07-tools-and-templates.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.wdf.sap.corp/I030696/AI-for-PM
