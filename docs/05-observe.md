@@ -82,6 +82,8 @@ Silent degradation is the production failure mode specific to agentic AI. The sy
 
 The dynamic works like scissors: one blade is system accuracy, trending slowly downward over time as models drift, training data becomes stale, and input distributions shift. The other blade is user trust, trending slowly upward as users grow familiar with the system and reduce their vigilance. The blades cross at some point after deployment. After that crossing, the system is wrong more often than users expect, but users do not know this because their trust was calibrated to earlier performance.
 
+![The Scissors Dynamic](images/scissors-dynamic.svg)
+
 The system does not announce this. There is no dashboard indicator that shows "accuracy has crossed below trust level." There is just a slow accumulation of confident, fluent, wrong answers being acted upon by supervisors who have no reason to question them.
 
 On the system side, six independent mechanisms can contribute to degradation and compound with each other:

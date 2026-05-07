@@ -56,6 +56,8 @@ This is the single most important framework in this entire wiki. Before any othe
 
 The Three Contracts framework names three fundamentally different types of agentic systems, each with a different accountability model, test strategy, and governance requirement. They are not stages on a maturity scale. They are different products with different designs.
 
+![The Three Contracts Framework](images/three-contracts.svg)
+
 > [!IMPORTANT]
 > **Contract 1: Suggestion Engine**
 >
@@ -109,6 +111,8 @@ Design both channels before you ship either.
 ## Mental model shift 5: The four-layer stack
 
 When your engineering team says "we're adding an AI feature," they are usually talking about the first layer. There are four.
+
+![The Four-Layer Agentic Stack](images/four-layer-stack.svg)
 
 **Layer 1: The foundation model.** The large language model (LLM) from a provider like Anthropic, OpenAI, or Google. Your team selects it, but does not control it. The provider updates it on their own schedule.
 

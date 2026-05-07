@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Agentic AI for Product Managers
 ## A Lifecycle Framework for Building, Evaluating, and Governing Agentic Systems
 
@@ -86,3 +87,7 @@ A full glossary of all terms used in this framework is at the end of the [PM Too
 ---
 
 *Maintained in the SAP AI Program knowledge base*
+=======
+# agentic-ai-for-pms
+A lifecycle framework for building, evaluating, and governing agentic AI systems
+>>>>>>> 403ffae418393980be74543523568338c277f112

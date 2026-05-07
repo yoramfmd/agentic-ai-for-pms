@@ -1,0 +1,75 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Inter, system-ui, sans-serif">
+  <title>The Three Contracts Framework</title>
+  <desc>Three types of agentic AI systems — Suggestion Engine, Copilot, and Autonomous Actor — each with different accountability, governance, and human involvement levels.</desc>
+
+  <rect width="720" height="400" fill="#f8f9fa" rx="8"/>
+
+  <text x="360" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#1a1a2e">The Three Contracts Framework</text>
+  <text x="360" y="54" text-anchor="middle" font-size="11" fill="#6c757d">Name the contract before any engineering starts</text>
+
+  <text x="140" y="82" text-anchor="middle" font-size="12" font-weight="600" fill="#3b5bdb">Contract 1</text>
+  <text x="360" y="82" text-anchor="middle" font-size="12" font-weight="600" fill="#0ca678">Contract 2</text>
+  <text x="580" y="82" text-anchor="middle" font-size="12" font-weight="600" fill="#e03131">Contract 3</text>
+
+  <rect x="30" y="92" width="220" height="250" rx="8" fill="#ffffff" stroke="#3b5bdb" stroke-width="2"/>
+  <rect x="30" y="92" width="220" height="40" rx="8" fill="#3b5bdb"/>
+  <rect x="30" y="112" width="220" height="20" fill="#3b5bdb"/>
+  <text x="140" y="117" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Suggestion Engine</text>
+  <text x="140" y="156" text-anchor="middle" font-size="11" fill="#495057">Agent surfaces options.</text>
+  <text x="140" y="172" text-anchor="middle" font-size="11" fill="#495057">Human decides.</text>
+  <text x="140" y="188" text-anchor="middle" font-size="11" fill="#495057">Human acts.</text>
+  <line x1="50" y1="202" x2="230" y2="202" stroke="#dee2e6" stroke-width="1"/>
+  <text x="140" y="222" text-anchor="middle" font-size="10" font-weight="600" fill="#3b5bdb">ACCOUNTABILITY</text>
+  <text x="140" y="238" text-anchor="middle" font-size="10" fill="#495057">Stays with user</text>
+  <text x="140" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#3b5bdb">GOVERNANCE</text>
+  <text x="140" y="274" text-anchor="middle" font-size="10" fill="#495057">Low</text>
+  <text x="140" y="294" text-anchor="middle" font-size="10" font-weight="600" fill="#3b5bdb">EXAMPLE</text>
+  <text x="140" y="310" text-anchor="middle" font-size="10" fill="#495057">Draft email, rep</text>
+  <text x="140" y="324" text-anchor="middle" font-size="10" fill="#495057">reviews and sends</text>
+
+  <rect x="250" y="92" width="220" height="250" rx="8" fill="#ffffff" stroke="#0ca678" stroke-width="2"/>
+  <rect x="250" y="92" width="220" height="40" rx="8" fill="#0ca678"/>
+  <rect x="250" y="112" width="220" height="20" fill="#0ca678"/>
+  <text x="360" y="117" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Copilot</text>
+  <text x="360" y="156" text-anchor="middle" font-size="11" fill="#495057">Agent acts on explicit</text>
+  <text x="360" y="172" text-anchor="middle" font-size="11" fill="#495057">human confirmation</text>
+  <text x="360" y="188" text-anchor="middle" font-size="11" fill="#495057">at each step.</text>
+  <line x1="270" y1="202" x2="450" y2="202" stroke="#dee2e6" stroke-width="1"/>
+  <text x="360" y="222" text-anchor="middle" font-size="10" font-weight="600" fill="#0ca678">ACCOUNTABILITY</text>
+  <text x="360" y="238" text-anchor="middle" font-size="10" fill="#495057">Shared</text>
+  <text x="360" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#0ca678">GOVERNANCE</text>
+  <text x="360" y="274" text-anchor="middle" font-size="10" fill="#495057">Moderate</text>
+  <text x="360" y="294" text-anchor="middle" font-size="10" font-weight="600" fill="#0ca678">EXAMPLE</text>
+  <text x="360" y="310" text-anchor="middle" font-size="10" fill="#495057">PO prepared, submitted</text>
+  <text x="360" y="324" text-anchor="middle" font-size="10" fill="#495057">only after approval</text>
+
+  <rect x="470" y="92" width="220" height="250" rx="8" fill="#ffffff" stroke="#e03131" stroke-width="2"/>
+  <rect x="470" y="92" width="220" height="40" rx="8" fill="#e03131"/>
+  <rect x="470" y="112" width="220" height="20" fill="#e03131"/>
+  <text x="580" y="117" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Autonomous Actor</text>
+  <text x="580" y="156" text-anchor="middle" font-size="11" fill="#495057">Agent executes sequences</text>
+  <text x="580" y="172" text-anchor="middle" font-size="11" fill="#495057">without approval,</text>
+  <text x="580" y="188" text-anchor="middle" font-size="11" fill="#495057">within defined scope.</text>
+  <line x1="490" y1="202" x2="670" y2="202" stroke="#dee2e6" stroke-width="1"/>
+  <text x="580" y="222" text-anchor="middle" font-size="10" font-weight="600" fill="#e03131">ACCOUNTABILITY</text>
+  <text x="580" y="238" text-anchor="middle" font-size="10" fill="#495057">Shifts to product team</text>
+  <text x="580" y="258" text-anchor="middle" font-size="10" font-weight="600" fill="#e03131">GOVERNANCE</text>
+  <text x="580" y="274" text-anchor="middle" font-size="10" fill="#495057">High</text>
+  <text x="580" y="294" text-anchor="middle" font-size="10" font-weight="600" fill="#e03131">EXAMPLE</text>
+  <text x="580" y="310" text-anchor="middle" font-size="10" fill="#495057">Auto-routes tier-1</text>
+  <text x="580" y="324" text-anchor="middle" font-size="10" fill="#495057">support, no review</text>
+
+  <text x="360" y="366" text-anchor="middle" font-size="10" fill="#6c757d">Human involvement</text>
+  <line x1="80" y1="375" x2="640" y2="375" stroke="#adb5bd" stroke-width="1.5" marker-end="url(#arrow-right)" marker-start="url(#arrow-left)"/>
+  <text x="80" y="390" text-anchor="middle" font-size="10" fill="#6c757d">High</text>
+  <text x="640" y="390" text-anchor="middle" font-size="10" fill="#6c757d">Low</text>
+
+  <defs>
+    <marker id="arrow-right" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#adb5bd"/>
+    </marker>
+    <marker id="arrow-left" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto-start-reverse">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#adb5bd"/>
+    </marker>
+  </defs>
+</svg>
