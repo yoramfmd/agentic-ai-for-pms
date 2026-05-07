@@ -1,0 +1,120 @@
+/* ============================================================
+   Agentic AI for PMs — custom theme
+   Primary: #1971c2 (blue, matches lifecycle Phase 1)
+   Accent:  #e03131 (red, matches lifecycle Phase 3)
+   ============================================================ */
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #1864ab;
+  --md-primary-fg-color--light: #4dabf7;
+  --md-primary-fg-color--dark:  #1864ab;
+  --md-accent-fg-color:         #e03131;
+  --md-typeset-a-color:         #1971c2;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #4dabf7;
+  --md-primary-fg-color--light: #74c0fc;
+  --md-primary-fg-color--dark:  #1971c2;
+  --md-accent-fg-color:         #ff6b6b;
+  --md-typeset-a-color:         #74c0fc;
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.3em;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+}
+
+/* ── Remove right-hand TOC (on-page table of contents) ───── */
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--secondary {
+    display: none;
+  }
+  .md-content {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+}
+
+/* ── Admonition color overrides ─────────────────────────── */
+/* note  → slate blue  (matches Phase 0/4 palette)           */
+/* important → deep blue (matches Phase 1)                   */
+/* warning → orange   (matches Phase 5)                      */
+/* danger  → red      (matches Phase 3)                      */
+
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: #1971c2;
+}
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset details.note > summary {
+  background-color: rgba(25, 113, 194, 0.12);
+  color: #1864ab;
+}
+.md-typeset .admonition.note > .admonition-title::before,
+.md-typeset details.note > summary::before {
+  background-color: #1971c2;
+}
+
+.md-typeset .admonition.important,
+.md-typeset details.important {
+  border-color: #5f3dc4;
+}
+.md-typeset .admonition.important > .admonition-title,
+.md-typeset details.important > summary {
+  background-color: rgba(95, 61, 196, 0.12);
+  color: #5f3dc4;
+}
+.md-typeset .admonition.important > .admonition-title::before,
+.md-typeset details.important > summary::before {
+  background-color: #5f3dc4;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: #e67700;
+}
+.md-typeset .admonition.warning > .admonition-title,
+.md-typeset details.warning > summary {
+  background-color: rgba(230, 119, 0, 0.12);
+  color: #e67700;
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-color: #c92a2a;
+}
+.md-typeset .admonition.danger > .admonition-title,
+.md-typeset details.danger > summary {
+  background-color: rgba(201, 42, 42, 0.12);
+  color: #c92a2a;
+}
+
+/* ── Nav sidebar ────────────────────────────────────────── */
+
+.md-nav__title {
+  font-weight: 700;
+}
+
+/* ── Home page SVG diagram ──────────────────────────────── */
+
+.md-typeset img[alt="Agentic AI PM Lifecycle"] {
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  margin: 1.5em 0;
+  width: 100%;
+}
